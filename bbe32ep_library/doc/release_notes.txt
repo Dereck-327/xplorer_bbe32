@@ -1,0 +1,94 @@
+==============================================================
+Release Notes for BBE32EP-VFPU library version v4.0.0, June 2017
+==============================================================
+
+This release contains following changes compared to the previous release 3.0.1:
+- addition of optimized single precision floating point functions 
+
+Fixes:
+- Previous library version fails with core configurations with xclib selected. This has been fixed in this version.
+- Previous library version fails to compile with core configurations with Single Precision Vector FP selected from   
+  RG-2016.4 xtensa release. Starting from RG-2016.4 release, software compatibility was not maintained for the instructions, 
+  BBE_LV4X16_I and BBE_SV4X16_I, used in the library. Additonal macros are defined in this version of the library in order 
+  to fix the issue and maintain the software compatibility across xtensa releases.
+- Precision figures have been updated in section 2.3.8 (logarithm)
+
+Known issues:
+- none
+
+Performance data:
+The performance data provided in the documentation for this release has been obtained using RG-2017.5 tools with core 
+configurations with following options set:
+- Single Precision Vector Floating Point option, 
+- Instruction RAM of 64 Mb, 
+- Dual Data RAMs of 64 Mb each, 
+- no Data/Instruction Cache.
+- Software options:
+        C Libraries                     Xtensa C Library 
+        Software ABI                    windowed 
+        Hardware Floating Point ABI     Selected 
+- Number of AR registers for call windows: 32 
+
+
+
+=============================================
+Release Notes for BBE32EP library version v3.0.1, December 2015
+=============================================
+
+------------ previous release v3.0.1 ---------------
+This release contains following changes compared to the previous release 3.0:
+- Fixed documentation of cycles performance of symmetric FIR routines
+- Fixed documentation for cholesky decomposition routines API
+
+------------ previous release v3.0 ---------------
+This release is done on the Xtensa Xplorer and Tools version RF.2014.0
+Changes in release 3.0 from previous release:
+
+This release contains following additional routines:
+- block DFT routines for LTE sizes from 12 upto 120
+- QR and cholesky routines for packed (block) matrices
+
+------------ previous release v2.0 ---------------
+This release is done on the Xtensa Xplorer and Tools version RE.2013.4
+IMPORTANT NOTE: This library should be used only on a BBE32EP Core with ALL
+options enabled.
+
+Changes in release 2.0 from previous release:
+
+This release contains following additional routines:
+- bkfir routines
+- IIR routines
+- Added more sizes in cfft/cifft and cnfft/cinfft routines
+- Added more sizes in cqr routines
+- Fitting/interpolation routines
+- Banded cholesky routines
+
+------------ previous release v1.0 ----------------
+This is the first release of the BBE32EP library.
+This library has been tested on Xtensa Xplorer RE.2013.2 and RE.2013.3
+
+Contains optimized functions for general signal processing (filtering,
+correlation, and convolution), power of 2 FFTs, some non power of 2 DFT's,
+math, matrix, and vector functions for Tensilica BBE32 core.
+
+* Library supports following core configurations:
+    XRC_B32EP with all options enabled
+
+* This release is done for the RE.2013.3 tools.
+
+* All testing and performance measurements have been using RE.2013.3
+  version of the Xtensa Xplorer and tools.
+
+* Modules included are:
+  - FIR filters and related functions
+  - FIR filters for decimation and interpolation
+  - Matrix operations
+  - Communications
+  - Fast Fourier Transform (power of 2 sizes, and some non power of 2 sizes)
+  - Complex QR decomposition and linear Ax=b solver routines (for sizes 2x2, 4x4 and 8x8)
+  - Cholesky decomposition and MMSE solver routines (for sizes 2x2, 4x4 and 8x8)
+  - Infinite impulse response filters
+  - Vector Mathematics
+
+  Note: Library reference document MAY include some functions to be released in future. 
+ 

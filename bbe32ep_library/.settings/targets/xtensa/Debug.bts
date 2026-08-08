@@ -1,0 +1,3360 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<BuildTarget tool="xtensa" version="1.0">
+    <BuildSettings>
+        <BaseSettings path="project">
+            <PreprocessorOptions>
+                <StringListMapOptions>
+                    <StringListMapEntry>
+                        <key>Includes</key>
+                        <value flag="-I" inheritance="prepend">
+                            <ListEntry>${workspace_loc:bbe32ep_library/include}</ListEntry>
+                            <ListEntry>${workspace_loc:bbe32ep_library/include_private}</ListEntry>
+                        </value>
+                    </StringListMapEntry>
+                </StringListMapOptions>
+            </PreprocessorOptions>
+            <CompilerOptions>
+                <SingleFlagMapOptions>
+                    <SingleFlagMapEntry>
+                        <key>CompilerVariant</key>
+                        <value flag="none" use="true"/>
+                    </SingleFlagMapEntry>
+                </SingleFlagMapOptions>
+                <StringListMapOptions>
+                    <StringListMapEntry>
+                        <key>CompilerAdditionalOptions</key>
+                        <value flag="" inheritance="append">
+                            <ListEntry>-pipe --DCONFIG_XRC_${xt_config_core}_mem_model -mlongcalls -fno-builtin -DMEM_MODEL=1  -I ../../../../library/include  -I ../../../../library/include_private  -O0 -g  -DUSE_ISA_PATCHES=1  -Wall -Wno-return-type -std=c99 -Werror -D__RENAMING__</ListEntry>
+                        </value>
+                    </StringListMapEntry>
+                </StringListMapOptions>
+            </CompilerOptions>
+            <LinkerOptions>
+                <BooleanMapOptions>
+                    <BooleanMapEntry>
+                        <key>CreateMinsize</key>
+                        <value selected="true"/>
+                    </BooleanMapEntry>
+                </BooleanMapOptions>
+                <LinkerSupport custom="false" key="-mlsp=" value="sim"/>
+            </LinkerOptions>
+        </BaseSettings>
+        <OverriddenSettings>
+            <OverriddenSettingsEntry>
+                <key>fft/bcnfft/bcnfft60_bbe32.c</key>
+                <value path="fft/bcnfft/bcnfft60_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>mcbox</key>
+<value flag="-mcbox" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/cfft/cifftas1024_norm_bbe32.c</key>
+                <value path="fft/cfft/cifftas1024_norm_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/cnfft/cnfft96_bbe32.c</key>
+                <value path="fft/cnfft/cnfft96_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                        <StringListMapOptions>
+                            <StringListMapEntry>
+<key>CompilerAdditionalOptions</key>
+<value flag="" inheritance="append">
+    <ListEntry>-OPT:unroll_size=0</ListEntry>
+</value>
+                            </StringListMapEntry>
+                        </StringListMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/bcnfft/bcnfft108_bbe32.c</key>
+                <value path="fft/bcnfft/bcnfft108_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>mcbox</key>
+<value flag="-mcbox" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/rfftf/rfft16384f_bbe32.c</key>
+                <value path="fft/rfftf/rfft16384f_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/cnfft/cinfft900_bbe32.c</key>
+                <value path="fft/cnfft/cinfft900_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/cnfft/cnfft960_bbe32.c</key>
+                <value path="fft/cnfft/cnfft960_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/cnfft/cnfft108_bbe32.c</key>
+                <value path="fft/cnfft/cnfft108_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/rfftf/rifft1024f_bbe32.c</key>
+                <value path="fft/rfftf/rifft1024f_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/rfftf/rifft32768f_bbe32.c</key>
+                <value path="fft/rfftf/rifft32768f_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/brfftf/brifft32f_bbe32.c</key>
+                <value path="fft/brfftf/brifft32f_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/cnfft/cinfft192_bbe32.c</key>
+                <value path="fft/cnfft/cinfft192_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>complexf/cdivf_bbe32.c</key>
+                <value path="complexf/cdivf_bbe32.c">
+                    <CompilerOptions>
+                        <StringListMapOptions>
+                            <StringListMapEntry>
+<key>CompilerAdditionalOptions</key>
+<value flag="" inheritance="append">
+    <ListEntry>-mno-fused-madd</ListEntry>
+</value>
+                            </StringListMapEntry>
+                        </StringListMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/tfft/tifft8192_bbe32.c</key>
+                <value path="fft/tfft/tifft8192_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/rfft/rifft128_bbe32.c</key>
+                <value path="fft/rfft/rifft128_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/cfft/cifftas1024_bbe32.c</key>
+                <value path="fft/cfft/cifftas1024_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/tfftf/tifft16384f_bbe32.c</key>
+                <value path="fft/tfftf/tifft16384f_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/rfftf/rfft4096f_bbe32.c</key>
+                <value path="fft/rfftf/rfft4096f_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/tfftf/tifft32768f_bbe32.c</key>
+                <value path="fft/tfftf/tifft32768f_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/cnfft/cinfft720_bbe32.c</key>
+                <value path="fft/cnfft/cinfft720_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>complexf/vfastdividecxf_bbe32.c</key>
+                <value path="complexf/vfastdividecxf_bbe32.c">
+                    <CompilerOptions>
+                        <StringListMapOptions>
+                            <StringListMapEntry>
+<key>CompilerAdditionalOptions</key>
+<value flag="" inheritance="append">
+    <ListEntry>-mno-fused-madd</ListEntry>
+</value>
+                            </StringListMapEntry>
+                        </StringListMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/tfft/tifft32768_bbe32.c</key>
+                <value path="fft/tfft/tifft32768_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/cfft/cifftas32_bbe32.c</key>
+                <value path="fft/cfft/cifftas32_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/cfft/cifftas16384_norm_bbe32.c</key>
+                <value path="fft/cfft/cifftas16384_norm_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/cfftf/cfft4096f_bbe32.c</key>
+                <value path="fft/cfftf/cfft4096f_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/rfftf/rfft64f_bbe32.c</key>
+                <value path="fft/rfftf/rfft64f_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/cfftf/cifft512f_bbe32.c</key>
+                <value path="fft/cfftf/cifft512f_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>matinv/svdf/grsvdsf_bbe32.c</key>
+                <value path="matinv/svdf/grsvdsf_bbe32.c">
+                    <CompilerOptions>
+                        <StringListMapOptions>
+                            <StringListMapEntry>
+<key>CompilerAdditionalOptions</key>
+<value flag="" inheritance="append">
+    <ListEntry>-fno-reciprocal-math</ListEntry>
+</value>
+                            </StringListMapEntry>
+                        </StringListMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/cnfft/cinfft24_bbe32.c</key>
+                <value path="fft/cnfft/cinfft24_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/cfft/cfftas32768_norm_bbe32.c</key>
+                <value path="fft/cfft/cfftas32768_norm_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/rfft/rifft512_bbe32.c</key>
+                <value path="fft/rfft/rifft512_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/cfft/cifftas8192_bbe32.c</key>
+                <value path="fft/cfft/cifftas8192_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/bcnfft/bcnfft36_bbe32.c</key>
+                <value path="fft/bcnfft/bcnfft36_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/rfftf/rifft128f_bbe32.c</key>
+                <value path="fft/rfftf/rifft128f_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/cnfft/cnfft300_bbe32.c</key>
+                <value path="fft/cnfft/cnfft300_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/brfftf/brfft64f_bbe32.c</key>
+                <value path="fft/brfftf/brfft64f_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>matinv/eigenf/eigen_hqr_f_bbe32.c</key>
+                <value path="matinv/eigenf/eigen_hqr_f_bbe32.c">
+                    <CompilerOptions>
+                        <StringListMapOptions>
+                            <StringListMapEntry>
+<key>CompilerAdditionalOptions</key>
+<value flag="" inheritance="append">
+    <ListEntry>-fno-reciprocal-math</ListEntry>
+</value>
+                            </StringListMapEntry>
+                        </StringListMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/cfft/cfftas8192_bbe32.c</key>
+                <value path="fft/cfft/cfftas8192_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/cfft/cfftas512_norm_bbe32.c</key>
+                <value path="fft/cfft/cfftas512_norm_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                            <SingleFlagMapEntry>
+<key>mcbox</key>
+<value flag="-mcbox" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                        <StringListMapOptions>
+                            <StringListMapEntry>
+<key>CompilerAdditionalOptions</key>
+<value flag="" inheritance="append">
+    <ListEntry>-OPT:unroll_size=0</ListEntry>
+</value>
+                            </StringListMapEntry>
+                        </StringListMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/cnfft/cnfft972_bbe32.c</key>
+                <value path="fft/cnfft/cnfft972_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/cfft/cfftas256_norm_bbe32.c</key>
+                <value path="fft/cfft/cfftas256_norm_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>matinv/rsvdf/rsvd_bidiag_mxnsf_bbe32.c</key>
+                <value path="matinv/rsvdf/rsvd_bidiag_mxnsf_bbe32.c">
+                    <CompilerOptions>
+                        <StringListMapOptions>
+                            <StringListMapEntry>
+<key>CompilerAdditionalOptions</key>
+<value flag="" inheritance="append">
+    <ListEntry>-fno-reciprocal-math</ListEntry>
+</value>
+                            </StringListMapEntry>
+                        </StringListMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/rfft/rfft2048_bbe32.c</key>
+                <value path="fft/rfft/rfft2048_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/tfftf/tifft8192f_bbe32.c</key>
+                <value path="fft/tfftf/tifft8192f_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/cfft/cfftas128_norm_bbe32.c</key>
+                <value path="fft/cfft/cfftas128_norm_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                        <StringListMapOptions>
+                            <StringListMapEntry>
+<key>CompilerAdditionalOptions</key>
+<value flag="" inheritance="append">
+    <ListEntry>-OPT:unroll_size=0</ListEntry>
+</value>
+                            </StringListMapEntry>
+                        </StringListMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/cnfft/cinfft360_bbe32.c</key>
+                <value path="fft/cnfft/cinfft360_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/bcnfft/bcnfft48_bbe32.c</key>
+                <value path="fft/bcnfft/bcnfft48_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/bcnfft/bcnfft120_bbe32.c</key>
+                <value path="fft/bcnfft/bcnfft120_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/cfft/cfftas64_bbe32.c</key>
+                <value path="fft/cfft/cfftas64_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/cnfft/cinfft1536_bbe32.c</key>
+                <value path="fft/cnfft/cinfft1536_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/rfftf/rifft16384f_bbe32.c</key>
+                <value path="fft/rfftf/rifft16384f_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/cfft/cifftas32_norm_bbe32.c</key>
+                <value path="fft/cfft/cifftas32_norm_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>matinv/svdf/grsvdsf_gks_bbe32.c</key>
+                <value path="matinv/svdf/grsvdsf_gks_bbe32.c">
+                    <CompilerOptions>
+                        <StringListMapOptions>
+                            <StringListMapEntry>
+<key>CompilerAdditionalOptions</key>
+<value flag="" inheritance="append">
+    <ListEntry>-fno-reciprocal-math</ListEntry>
+</value>
+                            </StringListMapEntry>
+                        </StringListMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/cfft/cfftas32_bbe32.c</key>
+                <value path="fft/cfft/cfftas32_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/cnfft/cinfft1200_bbe32.c</key>
+                <value path="fft/cnfft/cinfft1200_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/cnfft/cinfft216_bbe32.c</key>
+                <value path="fft/cnfft/cinfft216_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/bcnfft/bcinfft108_bbe32.c</key>
+                <value path="fft/bcnfft/bcinfft108_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>mcbox</key>
+<value flag="-mcbox" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/cnfft/cinfft36_bbe32.c</key>
+                <value path="fft/cnfft/cinfft36_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/tfft/tifft16384_bbe32.c</key>
+                <value path="fft/tfft/tifft16384_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/rfftf/rifft512f_bbe32.c</key>
+                <value path="fft/rfftf/rifft512f_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/rfftf/rifft256f_bbe32.c</key>
+                <value path="fft/rfftf/rifft256f_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/cnfft/cinfft384_bbe32.c</key>
+                <value path="fft/cnfft/cinfft384_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/cnfft/cnfft768_bbe32.c</key>
+                <value path="fft/cnfft/cnfft768_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/bcfftf/bcifft128f_bbe32.c</key>
+                <value path="fft/bcfftf/bcifft128f_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>vectorf/rvdotf_bbe32.c</key>
+                <value path="vectorf/rvdotf_bbe32.c">
+                    <CompilerOptions>
+                        <StringListMapOptions>
+                            <StringListMapEntry>
+<key>CompilerAdditionalOptions</key>
+<value flag="" inheritance="append">
+    <ListEntry>-CG:fusion=0</ListEntry>
+</value>
+                            </StringListMapEntry>
+                        </StringListMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/cfftf/cfft32768f_bbe32.c</key>
+                <value path="fft/cfftf/cfft32768f_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/cfft/cifftas16384_bbe32.c</key>
+                <value path="fft/cfft/cifftas16384_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/cfft/cfftas256_bbe32.c</key>
+                <value path="fft/cfft/cfftas256_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/cfftf/cifft128f_bbe32.c</key>
+                <value path="fft/cfftf/cifft128f_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/rfftf/rifft32f_bbe32.c</key>
+                <value path="fft/rfftf/rifft32f_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/cfftf/cifft32768f_bbe32.c</key>
+                <value path="fft/cfftf/cifft32768f_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/cfft/cfftas1024_norm_bbe32.c</key>
+                <value path="fft/cfft/cfftas1024_norm_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/bcfftf/bcfft64f_bbe32.c</key>
+                <value path="fft/bcfftf/bcfft64f_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/rfft/rifft4096_bbe32.c</key>
+                <value path="fft/rfft/rifft4096_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/brfftf/brfft128f_bbe32.c</key>
+                <value path="fft/brfftf/brfft128f_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/cnfft/cinfft1152_bbe32.c</key>
+                <value path="fft/cnfft/cinfft1152_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/cfftf/cifft32f_bbe32.c</key>
+                <value path="fft/cfftf/cifft32f_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/cfftf/cfft256f_bbe32.c</key>
+                <value path="fft/cfftf/cfft256f_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/cfft/cifftas16_norm_bbe32.c</key>
+                <value path="fft/cfft/cifftas16_norm_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/rfft/rfft8192_bbe32.c</key>
+                <value path="fft/rfft/rfft8192_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fit/prootf/rprootf_bbe32.c</key>
+                <value path="fit/prootf/rprootf_bbe32.c">
+                    <CompilerOptions>
+                        <StringListMapOptions>
+                            <StringListMapEntry>
+<key>CompilerAdditionalOptions</key>
+<value flag="" inheritance="append">
+    <ListEntry>-fno-reciprocal-math</ListEntry>
+</value>
+                            </StringListMapEntry>
+                        </StringListMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/cnfft/cnfft384_bbe32.c</key>
+                <value path="fft/cnfft/cnfft384_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>matinv/reigenf/reigen_hqr_f_bbe32.c</key>
+                <value path="matinv/reigenf/reigen_hqr_f_bbe32.c">
+                    <CompilerOptions>
+                        <StringListMapOptions>
+                            <StringListMapEntry>
+<key>CompilerAdditionalOptions</key>
+<value flag="" inheritance="append">
+    <ListEntry>-fno-reciprocal-math</ListEntry>
+</value>
+                            </StringListMapEntry>
+                        </StringListMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/bcnfft/bcnfft24_bbe32.c</key>
+                <value path="fft/bcnfft/bcnfft24_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/cnfft/cinfft432_bbe32.c</key>
+                <value path="fft/cnfft/cinfft432_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/cfft/cifftas2048_bbe32.c</key>
+                <value path="fft/cfft/cifftas2048_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/cnfft/cnfft600_bbe32.c</key>
+                <value path="fft/cnfft/cnfft600_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/cfftf/cifft16384f_bbe32.c</key>
+                <value path="fft/cfftf/cifft16384f_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/cnfft/cinfft600_bbe32.c</key>
+                <value path="fft/cnfft/cinfft600_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/rfft/rifft16384_bbe32.c</key>
+                <value path="fft/rfft/rifft16384_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/cnfft/cnfft432_bbe32.c</key>
+                <value path="fft/cnfft/cnfft432_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/cfftf/cifft256f_bbe32.c</key>
+                <value path="fft/cfftf/cifft256f_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/bcnfft/bcnfft72_bbe32.c</key>
+                <value path="fft/bcnfft/bcnfft72_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>mcbox</key>
+<value flag="-mcbox" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/cfftf/cfft16f_bbe32.c</key>
+                <value path="fft/cfftf/cfft16f_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/cfft/cfftas8192_norm_bbe32.c</key>
+                <value path="fft/cfft/cfftas8192_norm_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/cnfft/cinfft576_bbe32.c</key>
+                <value path="fft/cnfft/cinfft576_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/rfftf/rifft64f_bbe32.c</key>
+                <value path="fft/rfftf/rifft64f_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/tfftf/tfft32768f_bbe32.c</key>
+                <value path="fft/tfftf/tfft32768f_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/cnfft/cnfft576_bbe32.c</key>
+                <value path="fft/cnfft/cnfft576_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/rfftf/rfft2048f_bbe32.c</key>
+                <value path="fft/rfftf/rfft2048f_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/brfftf/brfft16f_bbe32.c</key>
+                <value path="fft/brfftf/brfft16f_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/bcnfft/bcnfft12_bbe32.c</key>
+                <value path="fft/bcnfft/bcnfft12_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/cfft/cfftas32_norm_bbe32.c</key>
+                <value path="fft/cfft/cfftas32_norm_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/cfftf/cfft2048f_bbe32.c</key>
+                <value path="fft/cfftf/cfft2048f_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/cfftf/cifft2048f_bbe32.c</key>
+                <value path="fft/cfftf/cifft2048f_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/cnfft/cnfft480_bbe32.c</key>
+                <value path="fft/cnfft/cnfft480_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/brfftf/brifft64f_bbe32.c</key>
+                <value path="fft/brfftf/brifft64f_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/cfft/cfftas1024_bbe32.c</key>
+                <value path="fft/cfft/cfftas1024_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/cnfft/cinfft480_bbe32.c</key>
+                <value path="fft/cnfft/cinfft480_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/rfft/rifft1024_bbe32.c</key>
+                <value path="fft/rfft/rifft1024_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/cfft/cfftas4096_norm_bbe32.c</key>
+                <value path="fft/cfft/cfftas4096_norm_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/cfftf/cfft16384f_bbe32.c</key>
+                <value path="fft/cfftf/cfft16384f_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/rfftf/rfft512f_bbe32.c</key>
+                <value path="fft/rfftf/rfft512f_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/cnfft/cinfft540_bbe32.c</key>
+                <value path="fft/cnfft/cinfft540_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>vectorf/cvdotf_bbe32.c</key>
+                <value path="vectorf/cvdotf_bbe32.c">
+                    <CompilerOptions>
+                        <StringListMapOptions>
+                            <StringListMapEntry>
+<key>CompilerAdditionalOptions</key>
+<value flag="" inheritance="append">
+    <ListEntry>-CG:fusion=0</ListEntry>
+</value>
+                            </StringListMapEntry>
+                        </StringListMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/cfftf/cifft1024f_bbe32.c</key>
+                <value path="fft/cfftf/cifft1024f_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/rfft/rfft32768_bbe32.c</key>
+                <value path="fft/rfft/rfft32768_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/cfftf/cifft16f_bbe32.c</key>
+                <value path="fft/cfftf/cifft16f_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/cnfft/cnfft72_bbe32.c</key>
+                <value path="fft/cnfft/cnfft72_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/cfft/cifftas32768_bbe32.c</key>
+                <value path="fft/cfft/cifftas32768_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/cfft/cifftas64_bbe32.c</key>
+                <value path="fft/cfft/cifftas64_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/cnfft/cinfft648_bbe32.c</key>
+                <value path="fft/cnfft/cinfft648_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/rfftf/rfft1024f_bbe32.c</key>
+                <value path="fft/rfftf/rfft1024f_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/rfft/rfft256_bbe32.c</key>
+                <value path="fft/rfft/rfft256_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/cfft/cifftas2048_norm_bbe32.c</key>
+                <value path="fft/cfft/cifftas2048_norm_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>matinv/rsvdf/rsvd2x2sf_bbe32.c</key>
+                <value path="matinv/rsvdf/rsvd2x2sf_bbe32.c">
+                    <CompilerOptions>
+                        <StringListMapOptions>
+                            <StringListMapEntry>
+<key>CompilerAdditionalOptions</key>
+<value flag="" inheritance="append">
+    <ListEntry>-fno-reciprocal-math</ListEntry>
+</value>
+                            </StringListMapEntry>
+                        </StringListMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/cnfft/cnfft648_bbe32.c</key>
+                <value path="fft/cnfft/cnfft648_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/cfft/cifftas128_norm_bbe32.c</key>
+                <value path="fft/cfft/cifftas128_norm_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                        <StringListMapOptions>
+                            <StringListMapEntry>
+<key>CompilerAdditionalOptions</key>
+<value flag="" inheritance="append">
+    <ListEntry>-OPT:unroll_size=0</ListEntry>
+</value>
+                            </StringListMapEntry>
+                        </StringListMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/rfftf/rfft128f_bbe32.c</key>
+                <value path="fft/rfftf/rfft128f_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/cnfft/cnfft36_bbe32.c</key>
+                <value path="fft/cnfft/cnfft36_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/tfftf/tfft8192f_bbe32.c</key>
+                <value path="fft/tfftf/tfft8192f_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/cnfft/cnfft864_bbe32.c</key>
+                <value path="fft/cnfft/cnfft864_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/rfftf/rifft2048f_bbe32.c</key>
+                <value path="fft/rfftf/rifft2048f_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/rfft/rfft128_bbe32.c</key>
+                <value path="fft/rfft/rfft128_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/cnfft/cinfft960_bbe32.c</key>
+                <value path="fft/cnfft/cinfft960_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/cnfft/cnfft192_bbe32.c</key>
+                <value path="fft/cnfft/cnfft192_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>complexf/cbfastexplinf_bbe32.c</key>
+                <value path="complexf/cbfastexplinf_bbe32.c">
+                    <CompilerOptions>
+                        <StringListMapOptions>
+                            <StringListMapEntry>
+<key>CompilerAdditionalOptions</key>
+<value flag="" inheritance="append">
+    <ListEntry>-mno-fused-madd</ListEntry>
+</value>
+                            </StringListMapEntry>
+                        </StringListMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/cnfft/cnfft900_bbe32.c</key>
+                <value path="fft/cnfft/cnfft900_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/cnfft/cinfft108_bbe32.c</key>
+                <value path="fft/cnfft/cinfft108_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/bcnfft/bcnfft96_bbe32.c</key>
+                <value path="fft/bcnfft/bcnfft96_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/cfft/cfftas128_bbe32.c</key>
+                <value path="fft/cfft/cfftas128_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                        <StringListMapOptions>
+                            <StringListMapEntry>
+<key>CompilerAdditionalOptions</key>
+<value flag="" inheritance="append">
+    <ListEntry>-OPT:unroll_size=0</ListEntry>
+</value>
+                            </StringListMapEntry>
+                        </StringListMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/cfft/cifftas8192_norm_bbe32.c</key>
+                <value path="fft/cfft/cifftas8192_norm_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/cfft/cfftas16_norm_bbe32.c</key>
+                <value path="fft/cfft/cfftas16_norm_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/cfft/cifftas64_norm_bbe32.c</key>
+                <value path="fft/cfft/cifftas64_norm_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/cfft/cifftas32768_norm_bbe32.c</key>
+                <value path="fft/cfft/cifftas32768_norm_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/cnfft/cnfft60_bbe32.c</key>
+                <value path="fft/cnfft/cnfft60_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>complexf/cbexplinf_bbe32.c</key>
+                <value path="complexf/cbexplinf_bbe32.c">
+                    <CompilerOptions>
+                        <StringListMapOptions>
+                            <StringListMapEntry>
+<key>CompilerAdditionalOptions</key>
+<value flag="" inheritance="append">
+    <ListEntry>-mno-fused-madd</ListEntry>
+</value>
+                            </StringListMapEntry>
+                        </StringListMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/cfftf/cfft128f_bbe32.c</key>
+                <value path="fft/cfftf/cfft128f_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/cfftf/cfft32f_bbe32.c</key>
+                <value path="fft/cfftf/cfft32f_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/cnfft/cnfft720_bbe32.c</key>
+                <value path="fft/cnfft/cnfft720_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/rfftf/rifft16f_bbe32.c</key>
+                <value path="fft/rfftf/rifft16f_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/cfft/cfftas512_bbe32.c</key>
+                <value path="fft/cfft/cfftas512_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                            <SingleFlagMapEntry>
+<key>mcbox</key>
+<value flag="-mcbox" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                        <StringListMapOptions>
+                            <StringListMapEntry>
+<key>CompilerAdditionalOptions</key>
+<value flag="" inheritance="append">
+    <ListEntry>-OPT:unroll_size=0</ListEntry>
+</value>
+                            </StringListMapEntry>
+                        </StringListMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/bcfftf/bcifft64f_bbe32.c</key>
+                <value path="fft/bcfftf/bcifft64f_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/bcfftf/bcfft128f_bbe32.c</key>
+                <value path="fft/bcfftf/bcfft128f_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/rfftf/rifft8192f_bbe32.c</key>
+                <value path="fft/rfftf/rifft8192f_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>matinv/rsvdf/rgrsvdsf_bbe32.c</key>
+                <value path="matinv/rsvdf/rgrsvdsf_bbe32.c">
+                    <CompilerOptions>
+                        <StringListMapOptions>
+                            <StringListMapEntry>
+<key>CompilerAdditionalOptions</key>
+<value flag="" inheritance="append">
+    <ListEntry>-fno-reciprocal-math</ListEntry>
+</value>
+                            </StringListMapEntry>
+                        </StringListMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/cnfft/cnfft540_bbe32.c</key>
+                <value path="fft/cnfft/cnfft540_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/cfft/cfftas16384_bbe32.c</key>
+                <value path="fft/cfft/cfftas16384_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>matinv/rsvdf/rsvdmxnsf_bbe32.c</key>
+                <value path="matinv/rsvdf/rsvdmxnsf_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>matinv/svdf/svd_bidiag_mxnsf_bbe32.c</key>
+                <value path="matinv/svdf/svd_bidiag_mxnsf_bbe32.c">
+                    <CompilerOptions>
+                        <StringListMapOptions>
+                            <StringListMapEntry>
+<key>CompilerAdditionalOptions</key>
+<value flag="" inheritance="append">
+    <ListEntry>-fno-reciprocal-math</ListEntry>
+</value>
+                            </StringListMapEntry>
+                        </StringListMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/rfft/rfft512_bbe32.c</key>
+                <value path="fft/rfft/rfft512_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/cnfft/cinfft300_bbe32.c</key>
+                <value path="fft/cnfft/cinfft300_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>matinv/rsvdf/rsvdmxnnf_bbe32.c</key>
+                <value path="matinv/rsvdf/rsvdmxnnf_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/cfftf/cfft1024f_bbe32.c</key>
+                <value path="fft/cfftf/cfft1024f_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/cnfft/cnfft240_bbe32.c</key>
+                <value path="fft/cnfft/cnfft240_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/cfftf/cifft64f_bbe32.c</key>
+                <value path="fft/cfftf/cifft64f_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/bcfftf/bcifft16f_bbe32.c</key>
+                <value path="fft/bcfftf/bcifft16f_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/cnfft/cinfft972_bbe32.c</key>
+                <value path="fft/cnfft/cinfft972_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/tfft/tfft32768_bbe32.c</key>
+                <value path="fft/tfft/tfft32768_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/cnfft/cnfft360_bbe32.c</key>
+                <value path="fft/cnfft/cnfft360_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/cfft/cifftas512_norm_bbe32.c</key>
+                <value path="fft/cfft/cifftas512_norm_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>matinv/svdf/svd2x2sf_bbe32.c</key>
+                <value path="matinv/svdf/svd2x2sf_bbe32.c">
+                    <CompilerOptions>
+                        <StringListMapOptions>
+                            <StringListMapEntry>
+<key>CompilerAdditionalOptions</key>
+<value flag="" inheritance="append">
+    <ListEntry>-fno-reciprocal-math</ListEntry>
+</value>
+                            </StringListMapEntry>
+                        </StringListMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/cnfft/cnfft1536_bbe32.c</key>
+                <value path="fft/cnfft/cnfft1536_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/cnfft/cnfft24_bbe32.c</key>
+                <value path="fft/cnfft/cnfft24_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/cnfft/cinfft144_bbe32.c</key>
+                <value path="fft/cnfft/cinfft144_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/cnfft/cnfft216_bbe32.c</key>
+                <value path="fft/cnfft/cnfft216_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/bcfftf/bcfft32f_bbe32.c</key>
+                <value path="fft/bcfftf/bcfft32f_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/rfftf/rfft32f_bbe32.c</key>
+                <value path="fft/rfftf/rfft32f_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/tfftf/tfft16384f_bbe32.c</key>
+                <value path="fft/tfftf/tfft16384f_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/cnfft/cinfft1080_bbe32.c</key>
+                <value path="fft/cnfft/cinfft1080_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/brfftf/brfft32f_bbe32.c</key>
+                <value path="fft/brfftf/brfft32f_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/cfft/cfftas32768_bbe32.c</key>
+                <value path="fft/cfft/cfftas32768_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/cfft/cifftas16_bbe32.c</key>
+                <value path="fft/cfft/cifftas16_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/cnfft/cinfft768_bbe32.c</key>
+                <value path="fft/cnfft/cinfft768_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/cnfft/cnfft48_bbe32.c</key>
+                <value path="fft/cnfft/cnfft48_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/cfft/cfftas16384_norm_bbe32.c</key>
+                <value path="fft/cfft/cfftas16384_norm_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/rfft/rifft8192_bbe32.c</key>
+                <value path="fft/rfft/rifft8192_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/cfft/cfftas64_norm_bbe32.c</key>
+                <value path="fft/cfft/cfftas64_norm_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/cfft/cifftas256_norm_bbe32.c</key>
+                <value path="fft/cfft/cifftas256_norm_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/cnfft/cinfft48_bbe32.c</key>
+                <value path="fft/cnfft/cinfft48_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/cfft/cfftas4096_bbe32.c</key>
+                <value path="fft/cfft/cfftas4096_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/cfft/cfftas2048_bbe32.c</key>
+                <value path="fft/cfft/cfftas2048_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/brfftf/brifft128f_bbe32.c</key>
+                <value path="fft/brfftf/brifft128f_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/cnfft/cnfft1152_bbe32.c</key>
+                <value path="fft/cnfft/cnfft1152_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/cnfft/cnfft288_bbe32.c</key>
+                <value path="fft/cnfft/cnfft288_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/rfft/rifft2048_bbe32.c</key>
+                <value path="fft/rfft/rifft2048_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/rfftf/rfft256f_bbe32.c</key>
+                <value path="fft/rfftf/rfft256f_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/rfft/rfft1024_bbe32.c</key>
+                <value path="fft/rfft/rfft1024_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/cfft/cifftas256_bbe32.c</key>
+                <value path="fft/cfft/cifftas256_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/cnfft/cinfft324_bbe32.c</key>
+                <value path="fft/cnfft/cinfft324_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/cnfft/cnfft324_bbe32.c</key>
+                <value path="fft/cnfft/cnfft324_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/rfft/rfft16384_bbe32.c</key>
+                <value path="fft/rfft/rfft16384_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/cfft/cifftas128_bbe32.c</key>
+                <value path="fft/cfft/cifftas128_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                        <StringListMapOptions>
+                            <StringListMapEntry>
+<key>CompilerAdditionalOptions</key>
+<value flag="" inheritance="append">
+    <ListEntry>-OPT:unroll_size=0</ListEntry>
+</value>
+                            </StringListMapEntry>
+                        </StringListMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/rfftf/rifft4096f_bbe32.c</key>
+                <value path="fft/rfftf/rifft4096f_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/cnfft/cinfft72_bbe32.c</key>
+                <value path="fft/cnfft/cinfft72_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/cnfft/cnfft144_bbe32.c</key>
+                <value path="fft/cnfft/cnfft144_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/cfft/cfftas2048_norm_bbe32.c</key>
+                <value path="fft/cfft/cfftas2048_norm_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/brfftf/brifft16f_bbe32.c</key>
+                <value path="fft/brfftf/brifft16f_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/cnfft/cinfft60_bbe32.c</key>
+                <value path="fft/cnfft/cinfft60_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>matinv/eigenf/eigen_hess_nxnsf_bbe32.c</key>
+                <value path="matinv/eigenf/eigen_hess_nxnsf_bbe32.c">
+                    <CompilerOptions>
+                        <StringListMapOptions>
+                            <StringListMapEntry>
+<key>CompilerAdditionalOptions</key>
+<value flag="" inheritance="append">
+    <ListEntry>-fno-reciprocal-math</ListEntry>
+</value>
+                            </StringListMapEntry>
+                        </StringListMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/cnfft/cinfft120_bbe32.c</key>
+                <value path="fft/cnfft/cinfft120_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                        <StringListMapOptions>
+                            <StringListMapEntry>
+<key>CompilerAdditionalOptions</key>
+<value flag="" inheritance="append">
+    <ListEntry>-OPT:unroll_size=0</ListEntry>
+</value>
+                            </StringListMapEntry>
+                        </StringListMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>matinv/rsvdf/rgrsvdsf_gks_bbe32.c</key>
+                <value path="matinv/rsvdf/rgrsvdsf_gks_bbe32.c">
+                    <CompilerOptions>
+                        <StringListMapOptions>
+                            <StringListMapEntry>
+<key>CompilerAdditionalOptions</key>
+<value flag="" inheritance="append">
+    <ListEntry>-fno-reciprocal-math</ListEntry>
+</value>
+                            </StringListMapEntry>
+                        </StringListMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/cfftf/cifft8192f_bbe32.c</key>
+                <value path="fft/cfftf/cifft8192f_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/cnfft/cnfft180_bbe32.c</key>
+                <value path="fft/cnfft/cnfft180_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/cfftf/cifft4096f_bbe32.c</key>
+                <value path="fft/cfftf/cifft4096f_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/cnfft/cnfft1080_bbe32.c</key>
+                <value path="fft/cnfft/cnfft1080_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/cnfft/cinfft240_bbe32.c</key>
+                <value path="fft/cnfft/cinfft240_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/tfft/tfft16384_bbe32.c</key>
+                <value path="fft/tfft/tfft16384_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/cnfft/cnfft1200_bbe32.c</key>
+                <value path="fft/cnfft/cnfft1200_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/rfftf/rfft16f_bbe32.c</key>
+                <value path="fft/rfftf/rfft16f_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/cnfft/cnfft120_bbe32.c</key>
+                <value path="fft/cnfft/cnfft120_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                        <StringListMapOptions>
+                            <StringListMapEntry>
+<key>CompilerAdditionalOptions</key>
+<value flag="" inheritance="append">
+    <ListEntry>-OPT:unroll_size=0</ListEntry>
+</value>
+                            </StringListMapEntry>
+                        </StringListMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>complexf/vdividecxf_bbe32.c</key>
+                <value path="complexf/vdividecxf_bbe32.c">
+                    <CompilerOptions>
+                        <StringListMapOptions>
+                            <StringListMapEntry>
+<key>CompilerAdditionalOptions</key>
+<value flag="" inheritance="append">
+    <ListEntry>-mno-fused-madd</ListEntry>
+</value>
+                            </StringListMapEntry>
+                        </StringListMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/cnfft/cinfft96_bbe32.c</key>
+                <value path="fft/cnfft/cinfft96_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                        <StringListMapOptions>
+                            <StringListMapEntry>
+<key>CompilerAdditionalOptions</key>
+<value flag="" inheritance="append">
+    <ListEntry>-OPT:unroll_size=0</ListEntry>
+</value>
+                            </StringListMapEntry>
+                        </StringListMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/cnfft/cinfft180_bbe32.c</key>
+                <value path="fft/cnfft/cinfft180_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>matinv/reigenf/reigen_hess_nxnsf_bbe32.c</key>
+                <value path="matinv/reigenf/reigen_hess_nxnsf_bbe32.c">
+                    <CompilerOptions>
+                        <StringListMapOptions>
+                            <StringListMapEntry>
+<key>CompilerAdditionalOptions</key>
+<value flag="" inheritance="append">
+    <ListEntry>-fno-reciprocal-math</ListEntry>
+</value>
+                            </StringListMapEntry>
+                        </StringListMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/cfft/cifftas4096_norm_bbe32.c</key>
+                <value path="fft/cfft/cifftas4096_norm_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/rfftf/rfft8192f_bbe32.c</key>
+                <value path="fft/rfftf/rfft8192f_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/cfft/cifftas512_bbe32.c</key>
+                <value path="fft/cfft/cifftas512_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/cfftf/cfft8192f_bbe32.c</key>
+                <value path="fft/cfftf/cfft8192f_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/cfftf/cfft64f_bbe32.c</key>
+                <value path="fft/cfftf/cfft64f_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/bcnfft/bcinfft60_bbe32.c</key>
+                <value path="fft/bcnfft/bcinfft60_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>mcbox</key>
+<value flag="-mcbox" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/cfft/cfftas16_bbe32.c</key>
+                <value path="fft/cfft/cfftas16_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/rfft/rifft32768_bbe32.c</key>
+                <value path="fft/rfft/rifft32768_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/rfftf/rfft32768f_bbe32.c</key>
+                <value path="fft/rfftf/rfft32768f_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/tfft/tfft8192_bbe32.c</key>
+                <value path="fft/tfft/tfft8192_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/cfftf/cfft512f_bbe32.c</key>
+                <value path="fft/cfftf/cfft512f_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/bcnfft/bcinfft72_bbe32.c</key>
+                <value path="fft/bcnfft/bcinfft72_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>mcbox</key>
+<value flag="-mcbox" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/rfft/rifft256_bbe32.c</key>
+                <value path="fft/rfft/rifft256_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fit/prootf/prootf_bbe32.c</key>
+                <value path="fit/prootf/prootf_bbe32.c">
+                    <CompilerOptions>
+                        <StringListMapOptions>
+                            <StringListMapEntry>
+<key>CompilerAdditionalOptions</key>
+<value flag="" inheritance="append">
+    <ListEntry>-fno-reciprocal-math</ListEntry>
+</value>
+                            </StringListMapEntry>
+                        </StringListMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/cfft/cifftas4096_bbe32.c</key>
+                <value path="fft/cfft/cifftas4096_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/cnfft/cinfft288_bbe32.c</key>
+                <value path="fft/cnfft/cinfft288_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/rfft/rfft4096_bbe32.c</key>
+                <value path="fft/rfft/rfft4096_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/bcfftf/bcifft32f_bbe32.c</key>
+                <value path="fft/bcfftf/bcifft32f_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/bcfftf/bcfft16f_bbe32.c</key>
+                <value path="fft/bcfftf/bcfft16f_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+            <OverriddenSettingsEntry>
+                <key>fft/cnfft/cinfft864_bbe32.c</key>
+                <value path="fft/cnfft/cinfft864_bbe32.c">
+                    <CompilerOptions>
+                        <SingleFlagMapOptions>
+                            <SingleFlagMapEntry>
+<key>OptAliasRestrict</key>
+<value flag="-OPT:alias=restrict" use="true"/>
+                            </SingleFlagMapEntry>
+                        </SingleFlagMapOptions>
+                    </CompilerOptions>
+                </value>
+            </OverriddenSettingsEntry>
+        </OverriddenSettings>
+    </BuildSettings>
+</BuildTarget>

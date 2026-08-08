@@ -1,0 +1,10 @@
+.claude
+.metabinary
+.metadata
+libc_RI-2020.5
+libc_RI-2021.8
+libc_RI-2023.11
+bin/
+*.o
+*.a
+XtensaInfo

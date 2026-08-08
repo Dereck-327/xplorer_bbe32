@@ -1,0 +1,26 @@
+{
+  "C_Cpp.intelliSenseEngine": "disabled",
+  "[c]": { "editor.defaultFormatter": "llvm-vs-code-extensions.vscode-clangd" },
+  "files.autoGuessEncoding": true,
+  "files.associations": {
+    "*.h": "c",
+    "*.inc": "c",
+    "*.xc": "xml"
+  },
+  "files.exclude": {
+    ".metadata": true,
+    ".metabinary": true,
+    "libc_RI-2020.5": true,
+    "libc_RI-2021.8": true,
+    "libc_RI-2023.11": true,
+    "**/bin": true,
+    "XtensaInfo": true
+  },
+  "search.exclude": {
+    "**/bin": true,
+    "**/doc": true
+  },
+  "editor.tabSize": 4,
+  "editor.insertSpaces": true,
+  "files.trimTrailingWhitespace": true
+}

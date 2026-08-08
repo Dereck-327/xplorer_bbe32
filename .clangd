@@ -1,0 +1,21 @@
+CompileFlags:
+  Compiler: clang
+  Add:
+    - -xc
+    - --target=xtensa-none-elf
+    - -std=c99
+    - -D__XTENSA__=1
+    - -D__XCC__=1
+    - -D__XTENSA_EL__=1
+    - -include
+    - D:/workspace/04.tensaWorkspace/bbe32/.clangd-tie-shim.h
+    - -ID:/workspace/04.tensaWorkspace/bbe32/bbe32ep_library/include
+    - -ID:/workspace/04.tensaWorkspace/bbe32/bbe32ep_library/include_private
+    - -IC:/usr/xtensa/XtDevTools/install/builds/RI-2020.5-win32/bbe32_saturn/xtensa-elf/arch/include
+    - -IC:/usr/xtensa/XtDevTools/install/builds/RI-2020.5-win32/bbe32_saturn/xtensa-elf/include
+    - -IC:/usr/xtensa/XtDevTools/install/tools/RI-2020.5-win32/XtensaTools/lib/xcc/include
+    - -IC:/usr/xtensa/XtDevTools/install/tools/RI-2020.5-win32/XtensaTools/xtensa-elf/include
+    - -Wno-unknown-attributes
+    # A few BBE_DIV* intrinsics are in no header; xt-clang only warns too.
+    - -Wno-implicit-function-declaration
+  Remove: [-m*, -f*]

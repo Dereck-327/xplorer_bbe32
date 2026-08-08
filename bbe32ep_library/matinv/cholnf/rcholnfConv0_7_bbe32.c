@@ -1,0 +1,101 @@
+/* ------------------------------------------------------------------------ */
+/* Copyright (c) 2016 by Cadence Design Systems, Inc. ALL RIGHTS RESERVED.  */
+/* These coded instructions, statements, and computer programs ('Cadence    */
+/* Libraries') are the copyrighted works of Cadence Design Systems Inc.     */
+/* Cadence IP is licensed for use with Cadence processor cores only and     */
+/* must not be used for any other processors and platforms. Your use of the */
+/* Cadence Libraries is subject to the terms of the license agreement you   */
+/* have entered into with Cadence Design Systems, or a sublicense granted   */
+/* to you by a direct Cadence licensee.                                     */
+/* ------------------------------------------------------------------------ */
+/*  IntegrIT, Ltd.   www.integrIT.com, info@integrIT.com                    */
+/*                                                                          */
+/* NatureDSP_Baseband Library                                               */
+/*                                                                          */
+/* This library contains copyrighted materials, trade secrets and other     */
+/* proprietary information of IntegrIT, Ltd. This software is licensed for  */
+/* use with Cadence processor cores only and must not be used for any other */
+/* processors and platforms. The license to use these sources was given to  */
+/* Cadence, Inc. under Terms and Condition of a Software License Agreement  */
+/* between Cadence, Inc. and IntegrIT, Ltd.                                 */
+/* ------------------------------------------------------------------------ */
+/*          Copyright (C) 2009-2017 IntegrIT, Limited.                      */
+/*                      All Rights Reserved.                                */
+/* ------------------------------------------------------------------------ */
+/*
+    Cholesky decomposition, floating point real data, block format
+    C code optimized for BBE32EP with VFPU
+    IntegrIT, 2006-2017
+*/
+#include "NatureDSP_types.h"
+#include "NatureDSP_Baseband_matinv.h"
+#include "common.h"
+#include "rcholnf_common.h"
+
+#if (HAVE_VFPU)
+
+/*---------------------------------------------------
+   compute n-th column of A'*A for all L matrices
+
+   Input:
+   A[L][SA]     L matrices MxN
+   sigma2[L]    regularization term
+   n            number of column
+   Output:
+   Z[L][n+1][1] results
+---------------------------------------------------*/
+void rcholnfConv0_7(float32_t* Z,const float32_t* A,const float32_t * restrict sigma2,int n,int M,int N,int L,int SA)
+{
+    int l, m;
+          xb_vecN_2xf32 * restrict pZ;
+    const xb_vecN_2xf32 * restrict pAk;
+    const xb_vecN_2xf32 * restrict pAk0;
+    const xb_vecN_2xf32 * restrict pA;
+    const xtfloat       * restrict pAn;
+    const xtfloat       * restrict pS;
+
+    valign va, vz;
+    xb_vecN_2xf32 Acc, /*Acc1, Acc2, Acc3, */sigma;
+    xb_vecN_2xf32 A0, A1;
+
+    NASSERT(n >= 0 && n <= 7);
+    NASSERT(N % 4 == 0 && M % 4 == 0 && SA == (M*N));
+    NASSERT_ALIGN(A, 2 * BBE_SIMD_WIDTH);
+
+    pS = (const xtfloat *)sigma2;
+    vz = BBE_ZALIGN();
+    pZ = (xb_vecN_2xf32 *)(Z);
+    pA = (const xb_vecN_2xf32 *)(A);
+
+    for (l = 0; l < L; l++)
+    {
+        BBE_LSN_2XF32_IP(sigma, pS, 4);
+        Acc = BBE_REPN_2XF32(sigma, 0);
+        pAk = pA;
+        pAk0 = (const xb_vecN_2xf32*)XT_ADDX4(N, (uintptr_t)pA);
+        pAn = (const xtfloat *)XT_ADDX4(n, (uintptr_t)pA);
+
+        __Pragma("loop_count min=2");
+        for (m = 0; m < M >> 1; m++)
+        {
+            BBE_LSN_2XF32_XP(A1, pAn, N * sizeof(float32_t));
+            A1 = BBE_REPN_2XF32(A1, 0);
+            va = BBE_LAN_2XF32_PP(pAk);
+            BBE_LAN_2XF32_IP(A0, va, pAk);
+            pAk = (const xb_vecN_2xf32 *)XT_ADDX4(2 * N - 8, (uintptr_t)pAk);
+            BBE_MULAN_2XF32(Acc, A0, A1);
+
+            BBE_LSN_2XF32_XP(A1, pAn, N * sizeof(float32_t));
+            A1 = BBE_REPN_2XF32(A1, 0);
+            va = BBE_LAN_2XF32_PP(pAk0);
+            BBE_LAN_2XF32_IP(A0, va, pAk0);
+            pAk0 = (const xb_vecN_2xf32 *)XT_ADDX4(2 * N - 8, (uintptr_t)pAk0);
+            BBE_MULAN_2XF32(Acc, A0, A1);
+        }
+        BBE_SAVN_2XF32_XP(Acc, vz, pZ, (n + 1) * sizeof(float32_t));
+
+        pA = (const xb_vecN_2xf32 *)XT_ADDX4(SA, (uintptr_t)pA);
+    }
+    BBE_SAN_2XF32POS_FP(vz, pZ);
+}
+#endif

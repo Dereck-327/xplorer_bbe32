@@ -1,0 +1,58 @@
+/* ------------------------------------------------------------------------ */
+/* Copyright (c) 2016 by Cadence Design Systems, Inc. ALL RIGHTS RESERVED.  */
+/* These coded instructions, statements, and computer programs ('Cadence    */
+/* Libraries') are the copyrighted works of Cadence Design Systems Inc.     */
+/* Cadence IP is licensed for use with Cadence processor cores only and     */
+/* must not be used for any other processors and platforms. Your use of the */
+/* Cadence Libraries is subject to the terms of the license agreement you   */
+/* have entered into with Cadence Design Systems, or a sublicense granted   */
+/* to you by a direct Cadence licensee.                                     */
+/* ------------------------------------------------------------------------ */
+/*  IntegrIT, Ltd.   www.integrIT.com, info@integrIT.com                    */
+/*                                                                          */
+/* NatureDSP_Baseband Library                                               */
+/*                                                                          */
+/* This library contains copyrighted materials, trade secrets and other     */
+/* proprietary information of IntegrIT, Ltd. This software is licensed for  */
+/* use with Cadence processor cores only and must not be used for any other */
+/* processors and platforms. The license to use these sources was given to  */
+/* Cadence, Inc. under Terms and Condition of a Software License Agreement  */
+/* between Cadence, Inc. and IntegrIT, Ltd.                                 */
+/* ------------------------------------------------------------------------ */
+/*          Copyright (C) 2009-2016 IntegrIT, Limited.                      */
+/*                      All Rights Reserved.                                */
+/* ------------------------------------------------------------------------ */
+#include "NatureDSP_types.h"
+#include "NatureDSP_Baseband_fft.h"
+#include "common.h"
+#include "fft_tw.h"
+
+// ****************** stage 1 ****************** 
+
+ALIGN(64) const int16_t fft48_tw1[] = 
+{
+	32767,	0,	32488,	-4277,	31651,	-8481,	30274,	-12540,
+	28378,	-16384,	25997,	-19948,	23170,	-23170,	19948,	-25997,
+	32767,	0,	31651,	-8481,	28378,	-16384,	23170,	-23170,
+	16384,	-28378,	8481,	-31651,	0,	-32768,	-8481,	-31651,
+	32767,	0,	30274,	-12540,	23170,	-23170,	12540,	-30274,
+	0,	-32768,	-12540,	-30274,	-23170,	-23170,	-30274,	-12540,
+	16384,	-28378,	12540,	-30274,	8481,	-31651,	4277,	-32488,
+	0,	0,	0,	0,	0,	0,	0,	0,
+	-16384,	-28378,	-23170,	-23170,	-28378,	-16384,	-31651,	-8481,
+	0,	0,	0,	0,	0,	0,	0,	0,
+	-32768,	0,	-30274,	12540,	-23170,	23170,	-12540,	30274,
+	0,	0,	0,	0,	0,	0,	0,	0,
+
+};
+
+// ****************** stage 2 ****************** 
+
+ALIGN(64) const int16_t fft48_tw2[] = 
+{
+	32767,	0,	28378,	-16384,	32767,	0,	16384,	-28378,
+	32767,	0,	0,	-32768,	0,	0,	0,	0,
+	16384,	-28378,	0,	0,	-16384,	-28378,	0,	0,
+	-32768,	0,	0,	0,	0,	0,	0,	0,
+
+};

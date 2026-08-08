@@ -1,0 +1,177 @@
+/* ------------------------------------------------------------------------ */
+/* Copyright (c) 2017 by Cadence Design Systems, Inc. ALL RIGHTS RESERVED.  */
+/* These coded instructions, statements, and computer programs ('Cadence    */
+/* Libraries') are the copyrighted works of Cadence Design Systems Inc.     */
+/* Cadence IP is licensed for use with Cadence processor cores only and     */
+/* must not be used for any other processors and platforms. Your use of the */
+/* Cadence Libraries is subject to the terms of the license agreement you   */
+/* have entered into with Cadence Design Systems, or a sublicense granted   */
+/* to you by a direct Cadence licensee.                                     */
+/* ------------------------------------------------------------------------ */
+/*  IntegrIT, Ltd.   www.integrIT.com, info@integrIT.com                    */
+/*                                                                          */
+/* NatureDSP_Baseband Library                                               */
+/*                                                                          */
+/* This library contains copyrighted materials, trade secrets and other     */
+/* proprietary information of IntegrIT, Ltd. This software is licensed for  */
+/* use with Cadence processor cores only and must not be used for any other */
+/* processors and platforms. The license to use these sources was given to  */
+/* Cadence, Inc. under Terms and Condition of a Software License Agreement  */
+/* between Cadence, Inc. and IntegrIT, Ltd.                                 */
+/* ------------------------------------------------------------------------ */
+/*          Copyright (C) 2009-2017 IntegrIT, Limited.                      */
+/*                      All Rights Reserved.                                */
+/* ------------------------------------------------------------------------ */
+/*
+    NatureDSP_Baseband library. FIR filters and Related Functions
+    Interpolating Block Complex FIR Filter
+    C code optimized for BBE32
+    IntegrIT, 2006-2017
+*/
+
+#include "firinterp_common.h"
+
+/*-------------------------------------------------------------------------
+Interpolating Block Complex FIR Filter
+
+Computes a complex FIR filter (direct-form) with interpolation using real
+IR stored in vector h. The complex data input is stored in vector x. The
+filter output result is stored in vector y. The filter calculates N*D complex
+output samples using M*D coefficients and requires last N+M-1 samples in the
+delay line.
+
+Representation:
+firinterp   16-bit signed fixed-point format
+            Filter coefficients are Q15
+            Number of fractional bits for input/output samples is user-difined
+firinterpf  IEEE-754 Std. single precision floating-point format for filter 
+            coefficients and input/output samples
+
+Parameters:
+Input:
+D           Interpolation ratio 
+N           Length of input sample block
+M           Length of subfilter. Total length of filter is M*D
+h[M*D]      Filter coefficients; h[0] is to be multiplied by the newest 
+            sample,Q15
+x[N]        Input complex samples
+Output:
+y[N*D]      Output complex samples
+
+Restrictions:
+x,y         Must not overlap
+x,y         Aligned on 32-byte boundary
+N           Multiple of 8 (firinterp) or 4 (firinterpf)
+M           2,4,8 or a positive multiple of 16 for D=2,3,4,6,12; or 
+            a positive multiple of 8 for other D
+D>1
+
+Note on performance:
+Most efficient operation (maximal MACs per cycle count) is achieved for
+subfilter lengths M=2,4,8,16 and 32 and interpolation factors D=2,3 and 4,
+in any combination.
+
+Note on availability:
+Depending on available ISA options, some combinations of filter parameters
+may not be supported. In that case, firinterp[f]_init returns NULL handle.
+-------------------------------------------------------------------------*/
+
+/* Filter processing function for D=4 M==8 and N%8==0 */
+static void filter_proc_4d_8_8n (    
+                              void* handle,
+                                 int16_t *  restrict  y, 
+                           const int16_t *  restrict  x,
+                           const int16_t *  restrict  coef,
+                                 int16_t *  restrict  delayLine,
+                                      int   M,
+                                      int   N,
+                                      int   D
+                          )
+{
+  int n;
+  const xb_vecNx16 *  restrict pX = (const xb_vecNx16 *)x;
+  const        int *  restrict pH = (const int        *)coef;
+  xb_vecNx16 *  restrict pD = (xb_vecNx16 *)delayLine;
+  xb_vecNx16 *  restrict pY = (xb_vecNx16 *)y;
+
+  xb_vecNx16 x0, x1, y0, y1, y2, y3;
+  xb_vecNx16 t0, t1, t2, t3;
+  xb_vecNx16 d0, d1;
+  uint32_t   c00, c01, c02, c03, c10, c11, c12, c13;
+  uint32_t   c20, c21, c22, c23, c30, c31, c32, c33;
+  xb_vecNx40 A0, A1, A2, A3;
+  vsaN       shft;
+  NASSERT(N>0 && N % 8 == 0);
+  NASSERT(M == 8);
+  NASSERT(D == 4);
+  NASSERT_ALIGN32(y);
+  NASSERT_ALIGN32(x);
+  NASSERT_ALIGN32(coef);
+  NASSERT_ALIGN32(delayLine);
+
+  shft = BBE_MOVVSA32(13);
+  d0 = BBE_LVNX16_I(pD, 0 * 2 * BBE_SIMD_WIDTH);
+
+  for (n = 0; n<N / (BBE_SIMD_WIDTH / 2); n++)
+  {
+    unsigned tmp;
+    BBE_L32IP(tmp, pH, 4);  c00 = tmp;
+    BBE_L32IP(tmp, pH, 4);  c10 = tmp;
+    BBE_L32IP(tmp, pH, 4);  c20 = tmp;
+    BBE_L32IP(tmp, pH, 4);  c30 = tmp;
+    BBE_L32IP(tmp, pH, 4);  c01 = tmp;
+    BBE_L32IP(tmp, pH, 4);  c11 = tmp;
+    BBE_L32IP(tmp, pH, 4);  c21 = tmp;
+    BBE_L32IP(tmp, pH, 4);  c31 = tmp;
+    BBE_L32IP(tmp, pH, 4);  c02 = tmp;
+    BBE_L32IP(tmp, pH, 4);  c12 = tmp;
+    BBE_L32IP(tmp, pH, 4);  c22 = tmp;
+    BBE_L32IP(tmp, pH, 4);  c32 = tmp;
+    BBE_L32IP(tmp, pH, 4);  c03 = tmp;
+    BBE_L32IP(tmp, pH, 4);  c13 = tmp;
+    BBE_L32IP(tmp, pH, 4);  c23 = tmp;
+    BBE_L32IP(tmp, pH, 4);  c33 = tmp;
+
+    pH-=16;
+
+    BBE_LVNX16_IP(d1, pX, 2 * BBE_SIMD_WIDTH);
+    BBE_SELPCNX16I(x1, x0, d1, d0, 7);
+    A0 = BBE_MULNX16PR(x0, x1, c00);
+    A1 = BBE_MULNX16PR(x0, x1, c10);
+    A2 = BBE_MULNX16PR(x0, x1, c20);
+    A3 = BBE_MULNX16PR(x0, x1, c30);
+    BBE_SELPCNX16I(x1, x0, d1, d0, 5);
+    BBE_MULANX16PR(A0, x0, x1, c01);
+    BBE_MULANX16PR(A1, x0, x1, c11);
+    BBE_MULANX16PR(A2, x0, x1, c21);
+    BBE_MULANX16PR(A3, x0, x1, c31);
+    BBE_SELPCNX16I(x1, x0, d1, d0, 3);
+    BBE_MULANX16PR(A0, x0, x1, c02);
+    BBE_MULANX16PR(A1, x0, x1, c12);
+    BBE_MULANX16PR(A2, x0, x1, c22);
+    BBE_MULANX16PR(A3, x0, x1, c32);
+    BBE_SELPCNX16I(x1, x0, d1, d0, 1);
+    BBE_MULANX16PR(A0, x0, x1, c03);
+    BBE_MULANX16PR(A1, x0, x1, c13);
+    BBE_MULANX16PR(A2, x0, x1, c23);
+    BBE_MULANX16PR(A3, x0, x1, c33);
+    y0 = BBE_PACKVNX40(A0, shft);
+    y1 = BBE_PACKVNX40(A1, shft);
+    y2 = BBE_PACKVNX40(A2, shft);
+    y3 = BBE_PACKVNX40(A3, shft);
+
+    BBE_DSELNX16I(t2, t0, y1, y0, BBE_DSELI_INTERLEAVE_2);
+    BBE_DSELNX16I(t3, t1, y3, y2, BBE_DSELI_INTERLEAVE_2);
+
+    BBE_DSELNX16I(y1, y0, t1, t0, BBE_DSELI_INTERLEAVE_4);
+    BBE_DSELNX16I(y3, y2, t3, t2, BBE_DSELI_INTERLEAVE_4);
+
+    BBE_SVNX16_IP(y0, pY, 2 * BBE_SIMD_WIDTH);
+    BBE_SVNX16_IP(y1, pY, 2 * BBE_SIMD_WIDTH);
+    BBE_SVNX16_IP(y2, pY, 2 * BBE_SIMD_WIDTH);
+    BBE_SVNX16_IP(y3, pY, 2 * BBE_SIMD_WIDTH);
+    d0 = d1;
+  }
+  BBE_SVNX16_I(d0, pD, 0);
+}
+const tFirFxdxns interp_4d_8_8n   ={&firinterp_dx,filter_proc_4d_8_8n} ;
