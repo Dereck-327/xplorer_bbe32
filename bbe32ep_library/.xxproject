@@ -1,29 +1,677 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <xxProperties>
+                        
+    
+    
+    
+    
     
     <propertyGroup name="project.information">
+                                                
+        
+        
+        
+        
         
         <version value="3.0"/>
-        
+                                                
+    
+    
+    
+    
+    
     </propertyGroup>
+                        
+    
+    
+    
+    
     
     <propertyGroup name="build.property">
+                                                
+        
+        
+        
+        
         
         <buildTarget defaultTarget="Release"/>
-        
+                                                
+    
+    
+    
+    
+    
     </propertyGroup>
+                        
+    
+    
+    
+    
     
     <propertyGroup name="library.dependencies">
+                                                
+        
+        
+        
+        
         
         <libraryDependencies/>
-        
+                                                
+    
+    
+    
+    
+    
     </propertyGroup>
+                        
+    
+    
+    
+    
     
     <propertyGroup name="build.exclusion.data">
+                                                
+        
+        
+        
+        
         <buildExclusionDatas>
             <exclusionSet name="Default" selected="1">
                 <excludedEntry data="/.*/bin/.*"/>
+                <excludedEntry data="/.*/fft/bcnfft/bcinfft108_bbe32\.c"/>
+                <excludedEntry data="/.*/fft/bcnfft/bcinfft120_bbe32\.c"/>
+                <excludedEntry data="/.*/fft/bcnfft/bcinfft12_bbe32\.c"/>
+                <excludedEntry data="/.*/fft/bcnfft/bcinfft24_bbe32\.c"/>
+                <excludedEntry data="/.*/fft/bcnfft/bcinfft36_bbe32\.c"/>
+                <excludedEntry data="/.*/fft/bcnfft/bcinfft48_bbe32\.c"/>
+                <excludedEntry data="/.*/fft/bcnfft/bcinfft60_bbe32\.c"/>
+                <excludedEntry data="/.*/fft/bcnfft/bcinfft72_bbe32\.c"/>
+                <excludedEntry data="/.*/fft/bcnfft/bcinfft96_bbe32\.c"/>
+                <excludedEntry data="/.*/fft/bcnfft/bcnfft108_bbe32\.c"/>
+                <excludedEntry data="/.*/fft/bcnfft/bcnfft120_bbe32\.c"/>
+                <excludedEntry data="/.*/fft/bcnfft/bcnfft12_bbe32\.c"/>
+                <excludedEntry data="/.*/fft/bcnfft/bcnfft24_bbe32\.c"/>
+                <excludedEntry data="/.*/fft/bcnfft/bcnfft36_bbe32\.c"/>
+                <excludedEntry data="/.*/fft/bcnfft/bcnfft48_bbe32\.c"/>
+                <excludedEntry data="/.*/fft/bcnfft/bcnfft60_bbe32\.c"/>
+                <excludedEntry data="/.*/fft/bcnfft/bcnfft72_bbe32\.c"/>
+                <excludedEntry data="/.*/fft/bcnfft/bcnfft96_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/rcmatvmul/rcmatvmul16x16n_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/rcmatvmul/rcmatvmul16x16s_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/rcmatvmul/rcmatvmul2x2n_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/rcmatvmul/rcmatvmul2x2s_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/rcmatvmul/rcmatvmul3x3n_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/rcmatvmul/rcmatvmul3x3s_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/rcmatvmul/rcmatvmul4x4n_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/rcmatvmul/rcmatvmul4x4s_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/rcmatvmul/rcmatvmul8x8n_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/rcmatvmul/rcmatvmul8x8s_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/rcmatvmul/rcmatvmulnxmn_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/rcmatvmul/rcmatvmulnxms_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/rcmatvmul/rcmatvmulnxnn_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/rcmatvmul/rcmatvmulnxns_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/cmatherm/cmatherm16x16n_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/cmatherm/cmatherm16x16s_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/cmatherm/cmatherm2x2n_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/cmatherm/cmatherm2x2s_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/cmatherm/cmatherm4x4n_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/cmatherm/cmatherm4x4s_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/cmatherm/cmatherm8x8n_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/cmatherm/cmatherm8x8s_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/cmatherm/cmathermnxmn_L2_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/cmatherm/cmathermnxmn_L8_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/cmatherm/cmathermnxmn_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/cmatherm/cmathermnxmn_tail_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/cmatherm/cmathermnxms_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/cmatherm/cmathermnxnn_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/cmatherm/cmathermnxns_bbe32\.c"/>
+                <excludedEntry data="/.*/fft/bcfftf/bcfft128f_bbe32\.c"/>
+                <excludedEntry data="/.*/fft/bcfftf/bcfft16f_bbe32\.c"/>
+                <excludedEntry data="/.*/fft/bcfftf/bcfft32f_bbe32\.c"/>
+                <excludedEntry data="/.*/fft/bcfftf/bcfft64f_bbe32\.c"/>
+                <excludedEntry data="/.*/fft/bcfftf/bcifft128f_bbe32\.c"/>
+                <excludedEntry data="/.*/fft/bcfftf/bcifft16f_bbe32\.c"/>
+                <excludedEntry data="/.*/fft/bcfftf/bcifft32f_bbe32\.c"/>
+                <excludedEntry data="/.*/fft/bcfftf/bcifft64f_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/bsf/cbs2x1f_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/bsf/cbs2x2f_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/bsf/cbs3x3f_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/bsf/cbs4x1f_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/bsf/cbs4x4f_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/bsf/cbs8x1f_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/bsf/cbs8x8f_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/bsf/cbsmxnf_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/bsf/rbs2x1f_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/bsf/rbs2x2f_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/bsf/rbs3x3f_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/bsf/rbs4x1f_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/bsf/rbs4x4f_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/bsf/rbs8x1f_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/bsf/rbs8x8f_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/bsf/rbsmxnf_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/cmatmulf/cmatmul2x2nf_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/cmatmulf/cmatmul2x2sf_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/cmatmulf/cmatmul3x3nf_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/cmatmulf/cmatmul3x3sf_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/cmatmulf/cmatmul4x4nf_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/cmatmulf/cmatmul4x4sf_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/cmatmulf/cmatmul8x8nf_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/cmatmulf/cmatmul8x8sf_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/cmatmulf/cmatmulnxmnf_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/cmatmulf/cmatmulnxmsf_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/cmatvmul/cmatvmul16x16n_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/cmatvmul/cmatvmul16x16s_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/cmatvmul/cmatvmul2x2n_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/cmatvmul/cmatvmul2x2s_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/cmatvmul/cmatvmul3x3n_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/cmatvmul/cmatvmul3x3s_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/cmatvmul/cmatvmul4x4n_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/cmatvmul/cmatvmul4x4s_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/cmatvmul/cmatvmul8x8n_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/cmatvmul/cmatvmul8x8s_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/cmatvmul/cmatvmulnxmn_Mgte8_Ngte8_L2x_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/cmatvmul/cmatvmulnxmn_Mgte8_Ngte8_L8x_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/cmatvmul/cmatvmulnxmn_Mgte8_Nlt8_L2x_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/cmatvmul/cmatvmulnxmn_Mgte8_Nlt8_L8x_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/cmatvmul/cmatvmulnxmn_Mlt8_Ngte8_L2x_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/cmatvmul/cmatvmulnxmn_Mlt8_Ngte8_L8x_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/cmatvmul/cmatvmulnxmn_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/cmatvmul/cmatvmulnxms_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/cmatvmul/cmatvmulnxnn_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/cmatvmul/cmatvmulnxns_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/cmatvmulf/cmatvmul2x2nf_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/cmatvmulf/cmatvmul2x2sf_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/cmatvmulf/cmatvmul3x3nf_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/cmatvmulf/cmatvmul3x3sf_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/cmatvmulf/cmatvmul4x4nf_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/cmatvmulf/cmatvmul4x4sf_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/cmatvmulf/cmatvmul8x8nf_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/cmatvmulf/cmatvmul8x8sf_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/cmatvmulf/cmatvmulnxmnf_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/cmatvmulf/cmatvmulnxmsf_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/interleavef/cinterleave2f_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/interleavef/cinterleave3f_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/interleavef/cinterleave4f_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/interleavef/cinterleavemf_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/interleavef/rinterleave2f_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/interleavef/rinterleave3f_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/interleavef/rinterleave4f_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/interleavef/rinterleavemf_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/matvmulf/matvmul2x2nf_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/matvmulf/matvmul2x2sf_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/matvmulf/matvmul3x3nf_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/matvmulf/matvmul3x3sf_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/matvmulf/matvmul4x4nf_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/matvmulf/matvmul4x4sf_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/matvmulf/matvmul8x8nf_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/matvmulf/matvmul8x8sf_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/matvmulf/matvmulnxmnf_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/matvmulf/matvmulnxmsf_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/sb/csb2x1_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/sb/csb2x2_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/sb/csb3x1_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/sb/csb3x3_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/sb/csb4x1_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/sb/csb4x4_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/sb/csb5_7x1_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/sb/csb8x1_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/sb/csb8x8_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/sb/csbmxn_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/sb/rsb2x1_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/sb/rsb2x2_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/sb/rsb3x1_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/sb/rsb3x3_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/sb/rsb4x1_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/sb/rsb4x4_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/sb/rsb5_7x1_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/sb/rsb8x1_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/sb/rsb8x8_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/sb/rsb9_15x1_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/sb/rsbmxn_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/cmattranf/cmattran2x2nf_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/cmattranf/cmattran2x2sf_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/cmattranf/cmattran4x4nf_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/cmattranf/cmattran4x4sf_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/cmattranf/cmattran8x8nf_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/cmattranf/cmattran8x8sf_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/cmattranf/cmattrannxmnf_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/cmattranf/cmattrannxmsf_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/cmathermf/cmatherm2x2nf_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/cmathermf/cmatherm2x2sf_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/cmathermf/cmatherm4x4nf_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/cmathermf/cmatherm4x4sf_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/cmathermf/cmatherm8x8nf_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/cmathermf/cmatherm8x8sf_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/cmathermf/cmathermnxmnf_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/cmathermf/cmathermnxmsf_bbe32\.c"/>
+                <excludedEntry data="/.*/matinv/bcholn/bchol16x32n_bbe32\.c"/>
+                <excludedEntry data="/.*/matinv/bcholn/bchol4x16n_bbe32\.c"/>
+                <excludedEntry data="/.*/matinv/bcholn/bchol4x32n_bbe32\.c"/>
+                <excludedEntry data="/.*/matinv/bcholn/bchol4xnn_bbe32\.c"/>
+                <excludedEntry data="/.*/matinv/bcholn/bchol8x16n_bbe32\.c"/>
+                <excludedEntry data="/.*/matinv/bcholn/bchol8x32n_bbe32\.c"/>
+                <excludedEntry data="/.*/matinv/bcholn/bchol8xnn_bbe32\.c"/>
+                <excludedEntry data="/.*/matinv/bcholn/bcholbkw16x32x1n_bbe32\.c"/>
+                <excludedEntry data="/.*/matinv/bcholn/bcholbkw16xnx1n_bbe32\.c"/>
+                <excludedEntry data="/.*/matinv/bcholn/bcholbkw4x16x1n_bbe32\.c"/>
+                <excludedEntry data="/.*/matinv/bcholn/bcholbkw4x32x1n_bbe32\.c"/>
+                <excludedEntry data="/.*/matinv/bcholn/bcholbkw4xnx1n_bbe32\.c"/>
+                <excludedEntry data="/.*/matinv/bcholn/bcholbkw8x16x1n_bbe32\.c"/>
+                <excludedEntry data="/.*/matinv/bcholn/bcholbkw8x32x1n_bbe32\.c"/>
+                <excludedEntry data="/.*/matinv/bcholn/bcholbkw8xnx1n_bbe32\.c"/>
+                <excludedEntry data="/.*/matinv/bcholn/bcholbkwwxnxpn_bbe32\.c"/>
+                <excludedEntry data="/.*/matinv/bcholn/bcholfwd12xnx1n_bbe32\.c"/>
+                <excludedEntry data="/.*/matinv/bcholn/bcholfwd16x32x1n_bbe32\.c"/>
+                <excludedEntry data="/.*/matinv/bcholn/bcholfwd16xnx1n_bbe32\.c"/>
+                <excludedEntry data="/.*/matinv/bcholn/bcholfwd4x16x1n_bbe32\.c"/>
+                <excludedEntry data="/.*/matinv/bcholn/bcholfwd4x32x1n_bbe32\.c"/>
+                <excludedEntry data="/.*/matinv/bcholn/bcholfwd4xnx1n_bbe32\.c"/>
+                <excludedEntry data="/.*/matinv/bcholn/bcholfwd8x16x1n_bbe32\.c"/>
+                <excludedEntry data="/.*/matinv/bcholn/bcholfwd8x32x1n_bbe32\.c"/>
+                <excludedEntry data="/.*/matinv/bcholn/bcholfwd8xnx1n_bbe32\.c"/>
+                <excludedEntry data="/.*/matinv/bcholn/bcholfwdwxnxpn_bbe32\.c"/>
+                <excludedEntry data="/.*/matinv/bcholn/bcholwxnn_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/deinterleavef/cdeinterleave2f_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/deinterleavef/cdeinterleave3f_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/deinterleavef/cdeinterleave4f_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/deinterleavef/cdeinterleavemf_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/deinterleavef/rdeinterleave2f_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/deinterleavef/rdeinterleave3f_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/deinterleavef/rdeinterleave4f_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/deinterleavef/rdeinterleavemf_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/cmattran/cmattran16x16n_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/cmattran/cmattran16x16s_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/cmattran/cmattran2x2n_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/cmattran/cmattran2x2s_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/cmattran/cmattran4x4n_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/cmattran/cmattran4x4s_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/cmattran/cmattran8x8n_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/cmattran/cmattran8x8s_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/cmattran/cmattrannxmn_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/cmattran/cmattrannxms_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/cmattran/cmattrannxnn_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/cmattran/cmattrannxns_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/sbf/csb2x1f_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/sbf/csb2x2f_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/sbf/csb3x3f_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/sbf/csb4x1f_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/sbf/csb4x4f_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/sbf/csb8x1f_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/sbf/csb8x8f_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/sbf/csbmxnf_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/sbf/rsb2x1f_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/sbf/rsb2x2f_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/sbf/rsb3x3f_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/sbf/rsb4x1f_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/sbf/rsb4x4f_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/sbf/rsb8x1f_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/sbf/rsb8x8f_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/sbf/rsbmxnf_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/bs/cbs2x1_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/bs/cbs2x2_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/bs/cbs3x1_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/bs/cbs3x3_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/bs/cbs4x1_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/bs/cbs4x4_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/bs/cbs5_7x1_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/bs/cbs8x1_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/bs/cbs8x8_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/bs/cbsmxn_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/bs/rbs2x1_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/bs/rbs2x2_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/bs/rbs3x1_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/bs/rbs3x3_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/bs/rbs4x1_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/bs/rbs4x4_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/bs/rbs5_7x1_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/bs/rbs8x1_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/bs/rbs8x8_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/bs/rbs9_15x1_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/bs/rbsmxn_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/matmulf/matmul2x2nf_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/matmulf/matmul2x2sf_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/matmulf/matmul3x3nf_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/matmulf/matmul3x3sf_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/matmulf/matmul4x4nf_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/matmulf/matmul4x4sf_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/matmulf/matmul8x8nf_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/matmulf/matmul8x8sf_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/matmulf/matmulnxmnf_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/matmulf/matmulnxmsf_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/matvmul/matvmul16x16n_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/matvmul/matvmul16x16s_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/matvmul/matvmul2x2n_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/matvmul/matvmul2x2s_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/matvmul/matvmul3x3n_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/matvmul/matvmul3x3s_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/matvmul/matvmul4x4n_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/matvmul/matvmul4x4s_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/matvmul/matvmul8x8n_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/matvmul/matvmul8x8s_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/matvmul/matvmulnxmn_M4_N8_L4x_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/matvmul/matvmulnxmn_M4_Ngte12_L4x_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/matvmul/matvmulnxmn_M8_N4_L4x_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/matvmul/matvmulnxmn_M8_Ngte12_L4x_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/matvmul/matvmulnxmn_Mgte12_N4_L4x_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/matvmul/matvmulnxmn_Mgte12_N8_L4x_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/matvmul/matvmulnxmn_Mgte12_Ngte12_L16x_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/matvmul/matvmulnxmn_Mgte12_Ngte12_L4x_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/matvmul/matvmulnxmn_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/matvmul/matvmulnxms_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/matvmul/matvmulnxnn_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/matvmul/matvmulnxns_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/cmatmul/cmatmul16x16n_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/cmatmul/cmatmul16x16s_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/cmatmul/cmatmul2x2n_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/cmatmul/cmatmul2x2s_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/cmatmul/cmatmul3x3n_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/cmatmul/cmatmul3x3s_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/cmatmul/cmatmul4x4n_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/cmatmul/cmatmul4x4s_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/cmatmul/cmatmul8x8n_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/cmatmul/cmatmul8x8s_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/cmatmul/cmatmulnxmn_L2_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/cmatmul/cmatmulnxmn_L8_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/cmatmul/cmatmulnxmn_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/cmatmul/cmatmulnxmn_tail_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/cmatmul/cmatmulnxms_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/cmatmul/cmatmulnxnn_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/cmatmul/cmatmulnxns_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/mattran/mattran16x16n_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/mattran/mattran16x16s_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/mattran/mattran2x2n_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/mattran/mattran2x2s_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/mattran/mattran4x4n_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/mattran/mattran4x4s_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/mattran/mattran8x8n_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/mattran/mattran8x8s_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/mattran/mattrannxmn_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/mattran/mattrannxms_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/mattran/mattrannxnn_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/mattran/mattrannxns_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/rcmatmul/rcmatmul16x16n_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/rcmatmul/rcmatmul16x16s_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/rcmatmul/rcmatmul2x2n_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/rcmatmul/rcmatmul2x2s_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/rcmatmul/rcmatmul3x3n_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/rcmatmul/rcmatmul3x3s_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/rcmatmul/rcmatmul4x4n_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/rcmatmul/rcmatmul4x4s_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/rcmatmul/rcmatmul8x8n_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/rcmatmul/rcmatmul8x8s_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/rcmatmul/rcmatmulnxmn_M4_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/rcmatmul/rcmatmulnxmn_N4_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/rcmatmul/rcmatmulnxmn_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/rcmatmul/rcmatmulnxmn_gen_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/rcmatmul/rcmatmulnxms_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/rcmatmul/rcmatmulnxnn_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/rcmatmul/rcmatmulnxns_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/matmul/matmul16x16n_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/matmul/matmul16x16s_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/matmul/matmul2x2n_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/matmul/matmul2x2s_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/matmul/matmul3x3n_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/matmul/matmul3x3s_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/matmul/matmul4x4n_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/matmul/matmul4x4s_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/matmul/matmul8x8n_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/matmul/matmul8x8s_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/matmul/matmulnxmn_L16_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/matmul/matmulnxmn_L4_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/matmul/matmulnxmn_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/matmul/matmulnxmn_tail_L4_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/matmul/matmulnxms_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/matmul/matmulnxnn_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/matmul/matmulnxns_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/deinterleave/cdeinterleave2_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/deinterleave/cdeinterleave3_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/deinterleave/cdeinterleave4_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/deinterleave/cdeinterleave8_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/deinterleave/rdeinterleave2_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/deinterleave/rdeinterleave3_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/deinterleave/rdeinterleave4_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/deinterleave/rdeinterleave8_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/mattranf/mattran2x2nf_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/mattranf/mattran2x2sf_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/mattranf/mattran4x4nf_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/mattranf/mattran4x4sf_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/mattranf/mattran8x8nf_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/mattranf/mattran8x8sf_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/mattranf/mattrannxmnf_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/mattranf/mattrannxmsf_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/interleave/cinterleave2_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/interleave/cinterleave3_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/interleave/cinterleave4_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/interleave/cinterleave8_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/interleave/rinterleave2_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/interleave/rinterleave3_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/interleave/rinterleave4_bbe32\.c"/>
+                <excludedEntry data="/.*/matop/interleave/rinterleave8_bbe32\.c"/>
+                <excludedEntry data="/.*/matinv/qrsf/qr_bkw2x1sf_bbe32\.c"/>
+                <excludedEntry data="/.*/matinv/qrsf/qr_bkw3x1sf_bbe32\.c"/>
+                <excludedEntry data="/.*/matinv/qrsf/qr_bkw4x1sf_bbe32\.c"/>
+                <excludedEntry data="/.*/matinv/qrsf/qr_bkwnxpsf_bbe32\.c"/>
+                <excludedEntry data="/.*/matinv/qrsf/qr_build_r2x2sf_bbe32\.c"/>
+                <excludedEntry data="/.*/matinv/qrsf/qr_build_r3x3sf_bbe32\.c"/>
+                <excludedEntry data="/.*/matinv/qrsf/qr_build_r4x4sf_bbe32\.c"/>
+                <excludedEntry data="/.*/matinv/qrsf/qr_build_rmxnsf_bbe32\.c"/>
+                <excludedEntry data="/.*/matinv/qrsf/qr_calc_qb2x2x1sf_bbe32\.c"/>
+                <excludedEntry data="/.*/matinv/qrsf/qr_calc_qb3x3x1sf_bbe32\.c"/>
+                <excludedEntry data="/.*/matinv/qrsf/qr_calc_qb4x4x1sf_bbe32\.c"/>
+                <excludedEntry data="/.*/matinv/qrsf/qr_calc_qbmxnxpsf_bbe32\.c"/>
+                <excludedEntry data="/.*/matinv/qrsf/qrfsHousholder1_bbe32\.c"/>
+                <excludedEntry data="/.*/matinv/qrsf/qrfsHousholder2_bbe32\.c"/>
+                <excludedEntry data="/.*/matinv/qrsf/qrfsHousholder3_bbe32\.c"/>
+                <excludedEntry data="/.*/matinv/qrsf/qrfsHousholder4_bbe32\.c"/>
+                <excludedEntry data="/.*/matinv/qrsf/qrfsHousholder_bbe32\.c"/>
+                <excludedEntry data="/.*/matinv/qrsf/qrfsHousholder_getScratchSize_bbe32\.c"/>
+                <excludedEntry data="/.*/matinv/qrsf/qrfsRotateR2_bbe32\.c"/>
+                <excludedEntry data="/.*/matinv/qrsf/qrfsRotateR3_bbe32\.c"/>
+                <excludedEntry data="/.*/matinv/qrsf/qrfsRotateR4_bbe32\.c"/>
+                <excludedEntry data="/.*/matinv/qrsf/qrfsRotateR_bbe32\.c"/>
+                <excludedEntry data="/.*/matinv/qrsf/qrfsUpdateR1_bbe32\.c"/>
+                <excludedEntry data="/.*/matinv/qrsf/qrfsUpdateR2_bbe32\.c"/>
+                <excludedEntry data="/.*/matinv/qrsf/qrfsUpdateR3_bbe32\.c"/>
+                <excludedEntry data="/.*/matinv/qrsf/qrfsUpdateR4_bbe32\.c"/>
+                <excludedEntry data="/.*/matinv/qrsf/qrfsUpdateR_bbe32\.c"/>
+                <excludedEntry data="/.*/matinv/qrsf/qrsfRotateBconj1_bbe32\.c"/>
+                <excludedEntry data="/.*/matinv/qrsf/qrsfUpdateB1_bbe32\.c"/>
+                <excludedEntry data="/.*/matinv/qrsf/qrsfUpdateB2_bbe32\.c"/>
+                <excludedEntry data="/.*/matinv/qrsf/qrsfUpdateB3_bbe32\.c"/>
+                <excludedEntry data="/.*/matinv/qrsf/qrsfUpdateB4_bbe32\.c"/>
+                <excludedEntry data="/.*/matinv/qrs/qr2x2s_bbe32\.c"/>
+                <excludedEntry data="/.*/matinv/qrs/qr_bkw2x2x1s_bbe32\.c"/>
+                <excludedEntry data="/.*/matinv/qrs/qr_bkw2x2x2s_bbe32\.c"/>
+                <excludedEntry data="/.*/matinv/qrs/qr_bkw4x1s_bbe32\.c"/>
+                <excludedEntry data="/.*/matinv/qrs/qr_bkw4x4s_bbe32\.c"/>
+                <excludedEntry data="/.*/matinv/qrs/qr_bkw8x1s_bbe32\.c"/>
+                <excludedEntry data="/.*/matinv/qrs/qr_bkw8x8s_bbe32\.c"/>
+                <excludedEntry data="/.*/matinv/qrs/qr_bkwnxps_bbe32\.c"/>
+                <excludedEntry data="/.*/matinv/qrs/qr_build_r4x4s_bbe32\.c"/>
+                <excludedEntry data="/.*/matinv/qrs/qr_build_r8x8s_bbe32\.c"/>
+                <excludedEntry data="/.*/matinv/qrs/qr_build_rmxns_bbe32\.c"/>
+                <excludedEntry data="/.*/matinv/qrs/qr_calc_qb4x4x1s_bbe32\.c"/>
+                <excludedEntry data="/.*/matinv/qrs/qr_calc_qb4x4x4s_bbe32\.c"/>
+                <excludedEntry data="/.*/matinv/qrs/qr_calc_qb8x8x1s_bbe32\.c"/>
+                <excludedEntry data="/.*/matinv/qrs/qr_calc_qb8x8x8s_bbe32\.c"/>
+                <excludedEntry data="/.*/matinv/qrs/qr_calc_qbmxnxps_bbe32\.c"/>
+                <excludedEntry data="/.*/matinv/qrs/qr_hh2s_bbe32\.c"/>
+                <excludedEntry data="/.*/matinv/qrs/qr_hh3s_bbe32\.c"/>
+                <excludedEntry data="/.*/matinv/qrs/qr_hh4s_bbe32\.c"/>
+                <excludedEntry data="/.*/matinv/qrs/qr_hh5s_bbe32\.c"/>
+                <excludedEntry data="/.*/matinv/qrs/qr_hh6s_bbe32\.c"/>
+                <excludedEntry data="/.*/matinv/qrs/qr_hh7s_bbe32\.c"/>
+                <excludedEntry data="/.*/matinv/qrs/qr_hh8s_bbe32\.c"/>
+                <excludedEntry data="/.*/fit/itr/interp_2tap_bbe32\.c"/>
+                <excludedEntry data="/.*/fit/itr/interp_4tap_bbe32\.c"/>
+                <excludedEntry data="/.*/fit/itr/vinterp_clin_bbe32\.c"/>
+                <excludedEntry data="/.*/fit/itr/vinterp_cneib_bbe32\.c"/>
+                <excludedEntry data="/.*/fit/itr/vinterp_lin_bbe32\.c"/>
+                <excludedEntry data="/.*/fit/itr/vinterp_neib_bbe32\.c"/>
+                <excludedEntry data="/.*/matinv/cqrs/cqr2x2s_bbe32\.c"/>
+                <excludedEntry data="/.*/matinv/cqrs/cqr_bkw16x16s_bbe32\.c"/>
+                <excludedEntry data="/.*/matinv/cqrs/cqr_bkw16x1s_bbe32\.c"/>
+                <excludedEntry data="/.*/matinv/cqrs/cqr_bkw2x1s_bbe32\.c"/>
+                <excludedEntry data="/.*/matinv/cqrs/cqr_bkw2x2x1s_bbe32\.c"/>
+                <excludedEntry data="/.*/matinv/cqrs/cqr_bkw2x2x2s_bbe32\.c"/>
+                <excludedEntry data="/.*/matinv/cqrs/cqr_bkw3x1s_bbe32\.c"/>
+                <excludedEntry data="/.*/matinv/cqrs/cqr_bkw3x3s_bbe32\.c"/>
+                <excludedEntry data="/.*/matinv/cqrs/cqr_bkw4x1s_bbe32\.c"/>
+                <excludedEntry data="/.*/matinv/cqrs/cqr_bkw4x4s_bbe32\.c"/>
+                <excludedEntry data="/.*/matinv/cqrs/cqr_bkw5x1s_bbe32\.c"/>
+                <excludedEntry data="/.*/matinv/cqrs/cqr_bkw5x5s_bbe32\.c"/>
+                <excludedEntry data="/.*/matinv/cqrs/cqr_bkw6x1s_bbe32\.c"/>
+                <excludedEntry data="/.*/matinv/cqrs/cqr_bkw6x6s_bbe32\.c"/>
+                <excludedEntry data="/.*/matinv/cqrs/cqr_bkw7x1s_bbe32\.c"/>
+                <excludedEntry data="/.*/matinv/cqrs/cqr_bkw7x7s_bbe32\.c"/>
+                <excludedEntry data="/.*/matinv/cqrs/cqr_bkw8x1s_bbe32\.c"/>
+                <excludedEntry data="/.*/matinv/cqrs/cqr_bkw8x8s_bbe32\.c"/>
+                <excludedEntry data="/.*/matinv/cqrs/cqr_bkwnxps_bbe32\.c"/>
+                <excludedEntry data="/.*/matinv/cqrs/cqr_build_r16x16s_bbe32\.c"/>
+                <excludedEntry data="/.*/matinv/cqrs/cqr_build_r16x8s_bbe32\.c"/>
+                <excludedEntry data="/.*/matinv/cqrs/cqr_build_r3x3s_bbe32\.c"/>
+                <excludedEntry data="/.*/matinv/cqrs/cqr_build_r4x2s_bbe32\.c"/>
+                <excludedEntry data="/.*/matinv/cqrs/cqr_build_r4x4s_bbe32\.c"/>
+                <excludedEntry data="/.*/matinv/cqrs/cqr_build_r5x5s_bbe32\.c"/>
+                <excludedEntry data="/.*/matinv/cqrs/cqr_build_r6x6s_bbe32\.c"/>
+                <excludedEntry data="/.*/matinv/cqrs/cqr_build_r7x7s_bbe32\.c"/>
+                <excludedEntry data="/.*/matinv/cqrs/cqr_build_r8x4s_bbe32\.c"/>
+                <excludedEntry data="/.*/matinv/cqrs/cqr_build_r8x8s_bbe32\.c"/>
+                <excludedEntry data="/.*/matinv/cqrs/cqr_build_rmxns_bbe32\.c"/>
+                <excludedEntry data="/.*/matinv/cqrs/cqr_calc_qb16x16x16s_bbe32\.c"/>
+                <excludedEntry data="/.*/matinv/cqrs/cqr_calc_qb16x16x1s_bbe32\.c"/>
+                <excludedEntry data="/.*/matinv/cqrs/cqr_calc_qb16x8x1s_bbe32\.c"/>
+                <excludedEntry data="/.*/matinv/cqrs/cqr_calc_qb3x3x1s_bbe32\.c"/>
+                <excludedEntry data="/.*/matinv/cqrs/cqr_calc_qb3x3x3s_bbe32\.c"/>
+                <excludedEntry data="/.*/matinv/cqrs/cqr_calc_qb4x2x1s_bbe32\.c"/>
+                <excludedEntry data="/.*/matinv/cqrs/cqr_calc_qb4x4x1s_bbe32\.c"/>
+                <excludedEntry data="/.*/matinv/cqrs/cqr_calc_qb4x4x4s_bbe32\.c"/>
+                <excludedEntry data="/.*/matinv/cqrs/cqr_calc_qb5x5x1s_bbe32\.c"/>
+                <excludedEntry data="/.*/matinv/cqrs/cqr_calc_qb5x5x5s_bbe32\.c"/>
+                <excludedEntry data="/.*/matinv/cqrs/cqr_calc_qb5x5xps_bbe32\.c"/>
+                <excludedEntry data="/.*/matinv/cqrs/cqr_calc_qb6x6x1s_bbe32\.c"/>
+                <excludedEntry data="/.*/matinv/cqrs/cqr_calc_qb6x6x6s_bbe32\.c"/>
+                <excludedEntry data="/.*/matinv/cqrs/cqr_calc_qb6x6xps_bbe32\.c"/>
+                <excludedEntry data="/.*/matinv/cqrs/cqr_calc_qb7x7x1s_bbe32\.c"/>
+                <excludedEntry data="/.*/matinv/cqrs/cqr_calc_qb7x7x7s_bbe32\.c"/>
+                <excludedEntry data="/.*/matinv/cqrs/cqr_calc_qb7x7xps_bbe32\.c"/>
+                <excludedEntry data="/.*/matinv/cqrs/cqr_calc_qb8x4x1s_bbe32\.c"/>
+                <excludedEntry data="/.*/matinv/cqrs/cqr_calc_qb8x8x1s_bbe32\.c"/>
+                <excludedEntry data="/.*/matinv/cqrs/cqr_calc_qb8x8x8s_bbe32\.c"/>
+                <excludedEntry data="/.*/matinv/cqrs/cqr_calc_qbmxnxps_bbe32\.c"/>
+                <excludedEntry data="/.*/matinv/cqrs/cqr_common_bbe32\.c"/>
+                <excludedEntry data="/.*/matinv/cqrs/cqr_hh10s_bbe32\.c"/>
+                <excludedEntry data="/.*/matinv/cqrs/cqr_hh11s_bbe32\.c"/>
+                <excludedEntry data="/.*/matinv/cqrs/cqr_hh12s_bbe32\.c"/>
+                <excludedEntry data="/.*/matinv/cqrs/cqr_hh13s_bbe32\.c"/>
+                <excludedEntry data="/.*/matinv/cqrs/cqr_hh2s_bbe32\.c"/>
+                <excludedEntry data="/.*/matinv/cqrs/cqr_hh3s_bbe32\.c"/>
+                <excludedEntry data="/.*/matinv/cqrs/cqr_hh4s_bbe32\.c"/>
+                <excludedEntry data="/.*/matinv/cqrs/cqr_hh5s_bbe32\.c"/>
+                <excludedEntry data="/.*/matinv/cqrs/cqr_hh6s_bbe32\.c"/>
+                <excludedEntry data="/.*/matinv/cqrs/cqr_hh7s_bbe32\.c"/>
+                <excludedEntry data="/.*/matinv/cqrs/cqr_hh8s_bbe32\.c"/>
+                <excludedEntry data="/.*/matinv/cqrs/cqr_hh9s_bbe32\.c"/>
+                <excludedEntry data="/.*/matinv/cqrsf/cqr_bkw2x1sf_bbe32\.c"/>
+                <excludedEntry data="/.*/matinv/cqrsf/cqr_bkw3x1sf_bbe32\.c"/>
+                <excludedEntry data="/.*/matinv/cqrsf/cqr_bkw4x1sf_bbe32\.c"/>
+                <excludedEntry data="/.*/matinv/cqrsf/cqr_bkwnxpsf_bbe32\.c"/>
+                <excludedEntry data="/.*/matinv/cqrsf/cqr_build_r2x2sf_bbe32\.c"/>
+                <excludedEntry data="/.*/matinv/cqrsf/cqr_build_r3x3sf_bbe32\.c"/>
+                <excludedEntry data="/.*/matinv/cqrsf/cqr_build_r4x4sf_bbe32\.c"/>
+                <excludedEntry data="/.*/matinv/cqrsf/cqr_build_rmxnsf_bbe32\.c"/>
+                <excludedEntry data="/.*/matinv/cqrsf/cqr_calc_qb2x2x1sf_bbe32\.c"/>
+                <excludedEntry data="/.*/matinv/cqrsf/cqr_calc_qb3x3x1sf_bbe32\.c"/>
+                <excludedEntry data="/.*/matinv/cqrsf/cqr_calc_qb4x4x1sf_bbe32\.c"/>
+                <excludedEntry data="/.*/matinv/cqrsf/cqr_calc_qbmxnxpsf_bbe32\.c"/>
+                <excludedEntry data="/.*/matinv/cqrsf/cqrfsHousholder1_bbe32\.c"/>
+                <excludedEntry data="/.*/matinv/cqrsf/cqrfsHousholder2_bbe32\.c"/>
+                <excludedEntry data="/.*/matinv/cqrsf/cqrfsHousholder3_bbe32\.c"/>
+                <excludedEntry data="/.*/matinv/cqrsf/cqrfsHousholder4_bbe32\.c"/>
+                <excludedEntry data="/.*/matinv/cqrsf/cqrfsHousholder_bbe32\.c"/>
+                <excludedEntry data="/.*/matinv/cqrsf/cqrfsHousholder_getScratchSize_bbe32\.c"/>
+                <excludedEntry data="/.*/matinv/cqrsf/cqrfsRotateR\.c"/>
+                <excludedEntry data="/.*/matinv/cqrsf/cqrfsRotateR2\.c"/>
+                <excludedEntry data="/.*/matinv/cqrsf/cqrfsRotateR3\.c"/>
+                <excludedEntry data="/.*/matinv/cqrsf/cqrfsRotateR4\.c"/>
+                <excludedEntry data="/.*/matinv/cqrsf/cqrfsUpdateR1_bbe32\.c"/>
+                <excludedEntry data="/.*/matinv/cqrsf/cqrfsUpdateR2_bbe32\.c"/>
+                <excludedEntry data="/.*/matinv/cqrsf/cqrfsUpdateR3_bbe32\.c"/>
+                <excludedEntry data="/.*/matinv/cqrsf/cqrfsUpdateR4_bbe32\.c"/>
+                <excludedEntry data="/.*/matinv/cqrsf/cqrfsUpdateR_bbe32\.c"/>
+                <excludedEntry data="/.*/matinv/cqrsf/cqrsfRotateBconj1_bbe32\.c"/>
+                <excludedEntry data="/.*/matinv/cqrsf/cqrsfUpdateB1_bbe32\.c"/>
+                <excludedEntry data="/.*/matinv/cqrsf/cqrsfUpdateB2_bbe32\.c"/>
+                <excludedEntry data="/.*/matinv/cqrsf/cqrsfUpdateB3_bbe32\.c"/>
+                <excludedEntry data="/.*/matinv/cqrsf/cqrsfUpdateB4_bbe32\.c"/>
             </exclusionSet>
         </buildExclusionDatas>
+                                            
+    
+    
+    
+    
     </propertyGroup>
+                    
+    
+    
+    
+    
+    <propertyGroup name="build.auto.includes">
+                                
+        
+        
+        <exportDirs autoConsumeDirs="false" includeDepDirs="false" mode="off"/>
+                            
+    
+    
+    </propertyGroup>
+                    
+    
+    
+    
+    <propertyGroup name="build.custom.steps">
+                        
+        
+        <pre-build enable="false">
+                                    
+            
+            <content/>
+                                
+        
+        </pre-build>
+                        
+        
+        <pre-link enable="false">
+                                    
+            
+            <content/>
+                                
+        
+        </pre-link>
+                        
+        
+        <post-build enable="false">
+                                    
+            
+            <content/>
+                                
+        
+        </post-build>
+                        
+        
+        <pre-clean enable="false">
+                                    
+            
+            <content/>
+                                
+        
+        </pre-clean>
+                    
+    
+    </propertyGroup>
+                
+
+
+
 </xxProperties>

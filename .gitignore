@@ -8,3 +8,8 @@ bin/
 *.o
 *.a
 XtensaInfo
+app/data
+.settings
+.cache
+app/.cproject
+app/demo

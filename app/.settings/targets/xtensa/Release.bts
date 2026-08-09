@@ -42,6 +42,20 @@
                         <value selected="true"/>
                     </BooleanMapEntry>
                 </BooleanMapOptions>
+                <StringListMapOptions>
+                    <StringListMapEntry>
+                        <key>LibrarySearchPath</key>
+                        <value flag="-L" inheritance="prepend">
+                            <ListEntry>D:\workspace\04.tensaWorkspace\bbe32\bbe32ep_library\bin\bbe32_saturn\Release</ListEntry>
+                        </value>
+                    </StringListMapEntry>
+                    <StringListMapEntry>
+                        <key>Libraries</key>
+                        <value flag="-l" inheritance="prepend">
+                            <ListEntry>bbe32ep_library</ListEntry>
+                        </value>
+                    </StringListMapEntry>
+                </StringListMapOptions>
                 <LinkerSupport custom="false" key="-mlsp=" value="sim"/>
             </LinkerOptions>
         </BaseSettings>
