@@ -1,0 +1,90 @@
+{
+  // Broadcom 风格函数文档注释。触发词：输入 brcmdoc 后按 Tab
+  "BRCM function doc comment": {
+    "scope": "c,cpp",
+    "prefix": "brcmdoc",
+    "description": "Broadcom Doxygen-style function header (@brief/@param/@trace/@code)",
+    "body": [
+      "/**",
+      "    @brief      ${1:one-line description}",
+      "",
+      "    @behaviour  ${2|Sync, Non-reentrant,Sync, Reentrant,Async, Non-reentrant|}",
+      "",
+      "    @pre        ${3:None}",
+      "",
+      "    @param[in]  ${4:aArg}   ${5:description}",
+      "    @param[out] ${6:aOut}   ${7:description}",
+      "",
+      "    @post       ${8:None}",
+      "",
+      "    @retval     #BCM_ERR_OK     ${9:success}",
+      "    @retval     #BCM_ERR_INVAL_PARAMS ${10:bad args}",
+      "",
+      "    @trace #BRCM_SWREQ_${11:MODULE}",
+      "    @trace #BRCM_SWARCH_${12:MODULE_FUNC}_PROC",
+      "",
+      "    @code{.unparsed}",
+      "    ${13:describe the logic here}",
+      "    @endcode",
+      "*/",
+      "$0"
+    ]
+  },
+
+  "file comment": {
+    "scope": "c,cpp",
+    "prefix": "filedoc",
+    "description": "Broadcom Doxygen-style file header (@file/@brief/@version/@date/@author)",
+    "body": [
+      "/**",
+      "    @file       $TM_FILENAME",
+      "    @brief      ${1:one-line description}",
+      "",
+      "    @version    ${2:0.1.0}",
+      "    @date       $CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE",
+      "    @author     ${3:hjk}",
+      "",
+      "*/",
+      "$0"
+    ]
+  },
+
+  // 头文件守卫宏。触发词：输入 guard 后按 Tab
+  // 宏名由文件名自动生成并转大写，非字母数字一律换成下划线
+  "include guard": {
+    "scope": "c,cpp",
+    "prefix": "fileguard",
+    "description": "#ifndef include guard, macro auto-derived from filename",
+    "body": [
+      "#ifndef ${1:BBE_}${TM_FILENAME_BASE/(.*)/${1:/upcase}/}_H__",
+      "#define ${1:BBE_}${TM_FILENAME_BASE/(.*)/${1:/upcase}/}_H__",
+      "",
+      "$0",
+      "",
+      "#endif /* ${1:BBE_}${TM_FILENAME_BASE/(.*)/${1:/upcase}/}_H__ */"
+    ]
+  },
+
+  // 头文件守卫宏 + extern "C"。触发词：输入 guardc 后按 Tab
+  "include guard with extern C": {
+    "scope": "c,cpp",
+    "prefix": "guardc",
+    "description": "#ifndef include guard wrapping an extern \"C\" block",
+    "body": [
+      "#ifndef ${1:BBE_}${TM_FILENAME_BASE/(.*)/${1:/upcase}/}_H__",
+      "#define ${1:BBE_}${TM_FILENAME_BASE/(.*)/${1:/upcase}/}_H__",
+      "",
+      "#ifdef __cplusplus",
+      "extern \"C\" {",
+      "#endif",
+      "",
+      "$0",
+      "",
+      "#ifdef __cplusplus",
+      "}",
+      "#endif",
+      "",
+      "#endif /* ${1:BBE_}${TM_FILENAME_BASE/(.*)/${1:/upcase}/}_H__ */"
+    ]
+  }
+}

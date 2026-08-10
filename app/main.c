@@ -1,9 +1,12 @@
 #include <stdio.h>
 
-#include "NatureDSP_types.h"
+#include "system.h"
+
 
 int main( int argc, char **argv )
 {
-	printf("Hello World\n");
+	system_init();
+	system_run();
+	system_deinit();
 	return 0;
 }
