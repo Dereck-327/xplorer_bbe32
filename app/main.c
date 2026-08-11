@@ -5,7 +5,12 @@
 
 int main( int argc, char **argv )
 {
-	system_init();
+	if (ERR_OK != system_init())
+	{
+		printf("system_init failed\n");
+		return -1;
+	}
+
 	system_run();
 	system_deinit();
 	return 0;

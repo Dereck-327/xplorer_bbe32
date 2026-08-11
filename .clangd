@@ -16,6 +16,7 @@ CompileFlags:
     - -IC:/usr/xtensa/XtDevTools/install/tools/RI-2020.5-win32/XtensaTools/lib/xcc/include
     - -IC:/usr/xtensa/XtDevTools/install/tools/RI-2020.5-win32/XtensaTools/xtensa-elf/include
     - -ID:/workspace/04.tensaWorkspace/bbe32/app/inc
+    - -ID:/workspace/04.tensaWorkspace/bbe32/app/inc/bbe
     - -Wno-unknown-attributes
     # A few BBE_DIV* intrinsics are in no header; xt-clang only warns too.
     - -Wno-implicit-function-declaration

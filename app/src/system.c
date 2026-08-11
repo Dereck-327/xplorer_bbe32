@@ -1,9 +1,9 @@
 #include "system.h"
 #include "utils/bbe_type.h"
-
+#include "simulate/pipeline.h"
 
 #include <stdio.h>
-
+#include <time.h>
 
 #define DATA_DIR        "data"
 //==========================[ Data Structures ]=========================
@@ -215,6 +215,14 @@ ErrorType system_init(void)
             printf("ParamLoad failed: %d\n", (int) ret);
             break;
         }
+
+        (void) ParamDump(&g_param, "System Parameters");
+        ret = Pipeline_Init(&g_ctx, &g_param);
+        if (ret != ERR_OK) {
+            printf("Pipeline_Init failed: %d\n", (int) ret);
+            break;
+        }
+
     } while (0);
 
     return ret;
@@ -223,7 +231,51 @@ ErrorType system_init(void)
 
 void system_run(void)
 {
+    ErrorType ret = ERR_OK;
+    Bbe_ResultType out;
+    clock_t t0, t1;
+    double sec;
+    uint16_t i = 0U;
+    uint8_t dataBexp = 0U;
+    uint8_t magsqBexp = 0U;
+    uint16_t frames = 0U;
+    uint16_t total = file_count(DATA_DIR);
+    printf("Total chirps to process: %u\n", (unsigned) total);
+    t0 = clock();
+    while (i < total)
+    {
+        (void) snprintf(g_path, sizeof(g_path), "%s/ra_data_%u.txt", DATA_DIR, (unsigned) i);
+        ret = frame_load(g_path, g_mag2, &dataBexp, &magsqBexp);
+        if (ret != ERR_OK) {
+            printf("frame_load failed: %d\n", (int) ret);
+            break;
+        }
+        ret = Pipeline_SubmitFrame(&g_ctx, g_mag2, dataBexp, magsqBexp);
+        if (ret != ERR_OK) {
+            printf("Pipeline_SubmitFrame failed: %d\n", (int) ret);
+            break;
+        }
+        ret = Pipeline_ProcessFrame(&g_ctx);
+        if (ret == ERR_OK) {
+			(void) Pipeline_GetResult(&g_ctx, &out);
+			++frames;
+        } else if (ret != ERR_BUSY) {
+            printf("Pipeline_ProcessFrame failed: %d\n", (int) ret);
+            break;
+        } else {} /* chirp 还在积累 没到最后一个*/
 
+        break;
+        ++i;
+    }
+    t1 = clock();
+    sec = (double)(t1 - t0) / CLOCKS_PER_SEC;
+    printf("========================================\n");
+    printf("Processed %u chirps in %.3f seconds\n", (unsigned) frames, sec);
+	if (0U != i)
+	{
+		printf("Average time per chirp: %.6f seconds\n", sec / (double) i);
+	}
+    printf("========================================\n");
 }
 
 void system_deinit(void)

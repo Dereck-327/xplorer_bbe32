@@ -278,3 +278,61 @@ ErrorType ParamCheck(const ParamType_t *const aParam)
 
 	return ret;
 }
+
+
+#if TRACE_ENABLED
+#define DUMP_FULL_MAX	1024U		/* 元素数超过此值才省略 */
+#define DUMP_EDGE		64U			/* 首尾各保留的元素数 */
+
+ErrorType ParamDump(const ParamType_t *const aParam, const char *const aLabel)
+{
+	ErrorType ret = ERR_OK;
+	const ParamDescType_t *desc;
+	const void *field;
+	uint16_t i;
+	uint16_t n;
+
+	if (NULL == aParam)
+	{
+		ret = ERR_INVAL_PARAMS;
+	}
+	else
+	{
+		printf("%s\n", (NULL != aLabel) ? aLabel : "params:");
+
+		for (i = 0U; i < DESC_NUM; ++i)
+		{
+			desc = &ParamDesc[i];
+			field = (const void *) ((const uint8_t *) aParam + desc->offset);
+
+			printf("[%s] ", desc->name);
+
+			for (n = 0U; n < desc->count; ++n)
+			{
+				/* 超长数组只打印首尾 64 个, 中间省略 */
+				if ((desc->count > DUMP_FULL_MAX) && (n == DUMP_EDGE))
+				{
+					printf("... , ");
+					n = desc->count - DUMP_EDGE - 1U;
+					continue;
+				}
+
+				printf("%d%s", (int) elem_get(field, desc->kind, n),
+				       ((n + 1U) < desc->count) ? ", " : "");
+			}
+
+			printf("\n");
+		}
+	}
+
+	return ret;
+}
+#else
+ErrorType ParamDump(const ParamType_t *const aParam, const char *const aLabel)
+{
+	(void) aParam;
+	(void) aLabel;
+
+	return ERR_OK;
+}
+#endif /* RA_TRACE_ENABLED */

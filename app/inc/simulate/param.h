@@ -86,4 +86,12 @@ ErrorType ParamLoad(ParamType_t *const aParam,
     @retval #ERR_INVAL_PARAMS  某项越界或不变式不成立 */
 ErrorType ParamCheck(const ParamType_t *const aParam);
 
+/** @brief 按描述符表打印全部参数 (调试用, TRACE_MASK 为 0 时不编译进来)
+    @param[in] aParam 待打印参数
+    @param[in] aLabel 打印前缀
+    @retval #ERR_OK            打印完成
+    @retval #ERR_INVAL_PARAMS  aParam 为空 */
+ErrorType ParamDump(const ParamType_t *const aParam, const char *const aLabel);
+
+
 #endif /* SIMULATE_PARAM_H__ */

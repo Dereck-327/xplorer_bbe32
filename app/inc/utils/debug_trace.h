@@ -12,9 +12,10 @@
 #define DEBUG_TRACE_H__
 
 #include "utils/err.h"
+#include "simulate/cfg.h"
 
 #ifndef TRACE_MASK
-	#define TRACE_MASK	(0x0001U)
+	#define TRACE_MASK	TRACE_DEBUG
 #endif
 
 #define TRACE_ENABLED	(0U != TRACE_MASK)
@@ -42,17 +43,16 @@ ErrorType DumpArray(const void *const aArr,
                           const uint16_t aCount,
                           const char *const aLabel);
 
-/* 关掉的位在预处理阶段就消失, 参数不求值, 无运行时开销。
- * 注意 aBit 必须是编译期常量 (RA_STAGE_*), 才能让编译器整段删掉。 */
+
 #if TRACE_ENABLED
-	#define RA_TRACE(aBit, aArr, aKind, aCount, aLabel)						\
+	#define TRACE(aBit, aArr, aKind, aCount, aLabel)						\
 		do {																\
 			if (0U != (TRACE_MASK & (1U << (aBit)))) {					\
 				(void) DumpArray((aArr), (aKind), (aCount), (aLabel));	\
 			}																\
 		} while (0)
 #else
-	#define RA_TRACE(aBit, aArr, aKind, aCount, aLabel)	do { } while (0)
+	#define TRACE(aBit, aArr, aKind, aCount, aLabel)	do { } while (0)
 #endif
 
 #endif /* DEBUG_TRACE_H__ */
