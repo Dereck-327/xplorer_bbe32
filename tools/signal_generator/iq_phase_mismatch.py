@@ -11,7 +11,7 @@ class IQSignal :
                  gain_imblance: float = 1.05, # IQ 增益不平衡
                  noise_floor: float = -20,
                  fs: int = 1e9, f_sig: float = 50e6 #% 信号频率默认50MHz
-                 , N: int = 4096) :
+                 , N: int = 4096, seed: int = 42) :
         self.N = N
         Fs = fs  # 采样率 默认1GHz
         Ts = 1/Fs
@@ -24,7 +24,7 @@ class IQSignal :
         I_raw = gain_imblance * (sig_I + leak_Q_I * sig_Q)
         Q_raw = 1.0 * (sig_Q + leak_I_Q * sig_I)
         # 底噪
-        rng = np.random.default_rng(seed=42)  # 可选设置 seed 以保证结果可复现
+        rng = np.random.default_rng(seed=seed)  # 可选设置 seed 以保证结果可复现
         self._I_raw = I_raw + 10 ** (noise_floor / 20) * rng.random(I_raw.size)
         self._Q_raw = Q_raw + 10 ** (noise_floor / 20) * rng.random(Q_raw.size)
         # 去除直流
@@ -44,6 +44,7 @@ class IQSignal :
         E_II = np.mean(self._I_ac ** 2)
         E_IQ = np.mean(self._I_ac * self._Q_ac)
         rho = E_IQ / E_II
+        print(f"相关系数rho :: {rho}")
         return rho
 
     def calculate_g_corr(self) -> float:
@@ -56,6 +57,7 @@ class IQSignal :
         pwr_I = np.mean(I_orth ** 2)
         pwr_Q = np.mean(Q_orth ** 2)
         gain_corr = np.sqrt(pwr_I / pwr_Q)
+        print(f"增益平衡系数 :: {gain_corr}")
         return gain_corr
 
     def gram_schmidt(self) -> None:
@@ -64,8 +66,6 @@ class IQSignal :
         """
         I_F = np.fft.fft(self._I_ac)
         Q_F = np.fft.fft(self._Q_ac)
-        print(f"I_F :: {I_F.size}")
-        print(f"I_F :: {I_F}")
         Q_F_corr = Q_F - self._rho * I_F  # 去相关
         Q_F_corr = self._gain_corr * Q_F_corr  # 增益平衡
         I_F_corr = I_F
@@ -84,15 +84,54 @@ class IQSignal :
         pwr_raw_db = pwr_raw_db - np.max(pwr_raw_db)
         return pwr_raw_db
 
-    def generate_fft_iq_ac(self, i_f: np.array, q_f: np.array) -> None:
+    def generate_fft_iq_ac(self, path: str) -> None:
+        """ 将 I_F=fft(I_ac)、Q_F=fft(Q_ac) 定点化 (S16 块浮点) 写文件。
+            复数 -> 交织存 real/imag; 全部分量共用一个块指数 fft_bexp。
+            真值 = mantissa * 2^(fft_bexp - 15)
+        """
+        I_F = np.fft.fft(self._I_ac)
+        Q_F = np.fft.fft(self._Q_ac)
 
-        pass
+        # 交织成 [re, im, re, im, ...]
+        i_iq = np.empty(2 * self.N); i_iq[0::2] = I_F.real; i_iq[1::2] = I_F.imag
+        q_iq = np.empty(2 * self.N); q_iq[0::2] = Q_F.real; q_iq[1::2] = Q_F.imag
+
+        # 两路共用一个块指数, 让最大幅值缩进 S16 满量程 (<1.0)
+        peak = float(np.max(np.abs(np.concatenate([i_iq, q_iq]))))
+        fft_bexp = int(np.ceil(np.log2(peak))) if peak > 0 else 0
+        scale = 2.0 ** fft_bexp
+
+        def quant(x):
+            m = np.round(x / scale * (1 << 15)).astype(np.int64)
+            return np.clip(m, -(1 << 15), (1 << 15) - 1).astype(np.int16)
+
+        i_mant = quant(i_iq)
+        q_mant = quant(q_iq)
+
+        with open(path, "w") as f:
+            f.write("i_f=" + ",".join(str(int(v)) for v in i_mant) + "\n")
+            f.write("q_f=" + ",".join(str(int(v)) for v in q_mant) + "\n")
+            f.write(f"fft_bexp={fft_bexp}\n")
+
 
 def main() -> None:
-    iq_sig = IQSignal()
-    iq_sig.gram_schmidt()          # 计算校准后频谱 -> iq_sig.sig_cal_F
-    f_axis = iq_sig._f_axis / 1e6  # MHz
+    import os
 
+    out_dir = os.path.join(os.path.dirname(__file__), "out")
+    os.makedirs(out_dir, exist_ok=True)
+
+    # 生成 CHIRP_NUM=4 组数据 (不同噪声种子)
+    for n in range(4):
+        seed=42 + n
+        iq_sig = IQSignal(seed=seed)
+
+        path = os.path.join(out_dir, f"ra_data_{n}.txt")
+        iq_sig.generate_fft_iq_ac(path)
+        # print(f"写出 {path}")
+
+    # 可视化最后一组的校准前后频谱
+    iq_sig.gram_schmidt()
+    f_axis = iq_sig._f_axis / 1e6  # MHz
     plt.subplot(2, 1, 1)
     plt.plot(f_axis, iq_sig.get_distorted_spectrum(), 'r', linewidth=1.5)
     plt.title('校准前频谱 (存在镜像串扰)')
@@ -110,5 +149,3 @@ def main() -> None:
 
 if __name__ == "__main__" :
     main()
-
-    pass
