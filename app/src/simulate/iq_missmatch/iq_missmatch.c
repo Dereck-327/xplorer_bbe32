@@ -1,4 +1,5 @@
 #include "simulate/iq_missmatch/iq_missmatch.h"
+#include "bbe/iq_correct_mag2.h"
 #include "utils/bbe_type.h"
 #include "utils/compiler.h"
 #include "system.h"			/* TXT_VAL_MAX */
@@ -30,24 +31,6 @@ static uint32_t parse_i16_csv(char *aVal, int16_t *const aDst, const uint32_t aM
 	return n;
 }
 
-/* 校正一个 bin: Q_corr = gainCorr*(Q - rho*I); sig = I + j*Q_corr; 返回 |sig|^2
- * j*Q_corr 让实虚部交换: sig_re = I_re - Qc_im, sig_im = I_im + Qc_re */
-static float bin_mag2(const uint32_t k, const float aRho, const float aGainCorr)
-{
-	float iRe = (float) g_i_f[2U * k];
-	float iIm = (float) g_i_f[2U * k + 1U];
-	float qRe = (float) g_q_f[2U * k];
-	float qIm = (float) g_q_f[2U * k + 1U];
-
-	float qcRe = aGainCorr * (qRe - (aRho * iRe));
-	float qcIm = aGainCorr * (qIm - (aRho * iIm));
-
-	float sRe = iRe - qcIm;
-	float sIm = iIm + qcRe;
-
-	return (sRe * sRe) + (sIm * sIm);
-}
-
 /*
  * IQ missmatch data file
  * i_f(交织 2*MAG2_SIZE int16): re, im, re, im, ...
@@ -66,10 +49,7 @@ ErrorType iqMissmatch_frame_load(const char *const aPath,
 	char *eq;
 	uint8_t seen = 0U;			/* bit0 i_f, bit1 q_f, bit2 fft_bexp */
 	int    fftBexp = 0;
-	float  peakP = 0.0F;
-	int    magsqBexp;
-	float  invScale;
-	uint32_t k;
+	int16_t rhoQ15, gainQ14;
 
 	if ((NULL == aPath) || (NULL == aFrame))
 	{
@@ -123,42 +103,15 @@ ErrorType iqMissmatch_frame_load(const char *const aPath,
 		return ERR_DATA_INTEG;		/* i_f / q_f / fft_bexp 三样缺一不可 */
 	}
 
-	/* 第一趟: 找校正后功率峰, 定块指数 */
-	for (k = 0U; k < MAG2_SIZE; ++k)
-	{
-		float p = bin_mag2(k, aRho, aGainCorr);
-		if (p > peakP)
-		{
-			peakP = p;
-		}
-	}
+	/* 系数转定点: rho Q15, gainCorr Q14 (见 iq_correct_mag2.h) */
+	rhoQ15  = (int16_t) lroundf(aRho * (float) (1 << IQ_RHO_Q));
+	gainQ14 = (int16_t) lroundf(aGainCorr * (float) (1 << IQ_GAIN_Q));
 
-	/* U(16,15): mag2 = round(P / 2^(15 + 2*magsqBexp)) 需落进 uint16。
-	 * 解 2^(15+2*b) >= peakP/65535 -> b = ceil((log2(peakP) - 31)/2)。dataBexp 用 fft_bexp。 */
-	magsqBexp = 0;
-	if (peakP > 0.0F)
-	{
-		magsqBexp = (int) ceilf((log2f(peakP) - 31.0F) / 2.0F);
-		if (magsqBexp < 0)
-		{
-			magsqBexp = 0;
-		}
-	}
+	/* 全定点校正 + 取模平方 -> U(16,15) 功率谱 */
+	iq_correct_mag2(g_i_f, g_q_f, rhoQ15, gainQ14,
+	                aFrame->mag2, &aFrame->magsqBexp, (uint16_t) MAG2_SIZE);
 
-	/* 第二趟: 量化写出 */
-	invScale = ldexpf(1.0F, -(15 + (2 * magsqBexp)));	/* 1 / 2^(15+2*magsqBexp) */
-	for (k = 0U; k < MAG2_SIZE; ++k)
-	{
-		float m = bin_mag2(k, aRho, aGainCorr) * invScale;
-		long  v = lroundf(m);
-
-		if (v < 0L)      { v = 0L; }
-		if (v > 65535L)  { v = 65535L; }
-		aFrame->mag2[k] = (uint16_t) v;
-	}
-
-	aFrame->dataBexp  = (uint8_t) fftBexp;
-	aFrame->magsqBexp = (uint8_t) magsqBexp;
+	aFrame->dataBexp = (uint8_t) fftBexp;
 
 	return ERR_OK;
 }
