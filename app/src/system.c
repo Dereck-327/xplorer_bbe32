@@ -3,6 +3,7 @@
 #include "simulate/pipeline.h"
 #include "simulate/iq_missmatch/iq_missmatch.h"
 #include "utils/err.h"
+#include "utils/perf_stat.h"
 
 #include <stdint.h>
 #include <stdio.h>
@@ -160,30 +161,41 @@ void system_run(void)
     uint16_t total = file_count(DATA_DIR);
     printf("Total chirps to process: %u\n", (unsigned) total);
     t0 = clock();
+	PerfStat_Init();
     while (i < total)
     {
+		PERF_BEGIN(frame_total);
         (void) snprintf(g_path, sizeof(g_path), "%s/ra_data_%u.txt", DATA_DIR, (unsigned) i);
+		PERF_BEGIN(frame_load);
         ret = iqMissmatch_frame_load(g_path, IQ_RHO, IQ_GAIN_CORR, &g_frame);
+		PERF_END(frame_load);
         if (ret != ERR_OK) {
             printf("iqMissmatch_frame_load failed: %d\n", (int) ret);
+			PERF_END(frame_total);
             break;
         }
-
+		PERF_BEGIN(submit_frame);
         ret = Pipeline_SubmitFrame(&g_ctx, g_frame.mag2,
                                    g_frame.dataBexp, g_frame.magsqBexp);
+		PERF_END(submit_frame);
         if (ret != ERR_OK) {
             printf("Pipeline_SubmitFrame failed: %d\n", (int) ret);
+			PERF_END(frame_total);
             break;
         }
+		PERF_BEGIN(process_frame);
         ret = Pipeline_ProcessFrame(&g_ctx);
+		PERF_END(process_frame);
         if (ret == ERR_OK) {
 			(void) Pipeline_GetResult(&g_ctx, &out);
 			++frames;
         } else if (ret != ERR_BUSY) {
             printf("Pipeline_ProcessFrame failed: %d\n", (int) ret);
+			PERF_END(frame_total);
             break;
         } else {} /* chirp 还在积累 没到最后一个*/
         ++i;
+		PERF_END(frame_total);
 
     }
     t1 = clock();
@@ -195,6 +207,7 @@ void system_run(void)
 		printf("Average time per chirp: %.6f seconds\n", sec / (double) i);
 	}
     printf("========================================\n");
+	PerfStat_Report();
 }
 
 void system_deinit(void)

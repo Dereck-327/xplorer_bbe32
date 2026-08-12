@@ -9,6 +9,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <math.h>
+#include "utils/perf_stat.h"
 
 /* 交织存储 [re, im, re, im, ...], 布局同 complex_fract16, 每路 2*MAG2_SIZE 个 int16 */
 // static int16_t g_i_f[2U * MAG2_SIZE] COMP_ALIGN(VEC_ALIGN);
@@ -67,7 +68,7 @@ ErrorType iqMissmatch_frame_load(const char *const aPath,
 	{
 		return ERR_NOT_FOUND;
 	}
-
+    PERF_BEGIN(chirp_read);
 	while (NULL != fgets(g_line, (int) sizeof(g_line), fp))
 	{
 		eq = strchr(g_line, '=');
@@ -79,14 +80,14 @@ ErrorType iqMissmatch_frame_load(const char *const aPath,
 
 		if (0 == strcmp(g_line, "i_f"))
 		{
-			if ((2U * MAG2_SIZE) == parse_i16_csv(eq + 1, g_i_f, 2U * MAG2_SIZE))
+			if (MAG2_SIZE == parse_i16_csv(eq + 1, g_i_f, MAG2_SIZE))
 			{
 				seen |= 0x01U;
 			}
 		}
 		else if (0 == strcmp(g_line, "q_f"))
 		{
-			if ((2U * MAG2_SIZE) == parse_i16_csv(eq + 1, g_q_f, 2U * MAG2_SIZE))
+			if (MAG2_SIZE == parse_i16_csv(eq + 1, g_q_f, MAG2_SIZE))
 			{
 				seen |= 0x02U;
 			}
@@ -103,9 +104,11 @@ ErrorType iqMissmatch_frame_load(const char *const aPath,
 	}
 
 	(void) fclose(fp);
+    PERF_END(chirp_read);
 
 	if (0x07U != seen)
 	{
+        printf("seen error :: 0X%0x\n", seen);
 		return ERR_DATA_INTEG;		/* i_f / q_f / fft_bexp 三样缺一不可 */
 	}
 
@@ -113,11 +116,15 @@ ErrorType iqMissmatch_frame_load(const char *const aPath,
 	rhoQ15  = (int16_t) lroundf(aRho * (float) (1 << IQ_RHO_Q));
 	gainQ14 = (int16_t) lroundf(aGainCorr * (float) (1 << IQ_GAIN_Q));
 
-	/* 全定点校正 + 取模平方 -> U(16,15) 功率谱 */
-	iq_correct_mag2(g_i_f, g_q_f, rhoQ15, gainQ14,
+    PERF_BEGIN(iq_correct_mag2);
+	/* 全定点校正 + 取模平方 -> U(16,15) 功率谱
+	 * g_i_f/g_q_f 是 int16_t[], 但布局与 complex_fract16[] 等价 (交织 [re,im,...]) */
+	iq_correct_mag2((const complex_fract16 *) g_i_f,
+	                (const complex_fract16 *) g_q_f,
+	                rhoQ15, gainQ14,
 	                aFrame->mag2, &aFrame->magsqBexp, (uint16_t) MAG2_SIZE);
 
 	aFrame->dataBexp = (uint8_t) fftBexp;
-
+    PERF_END(iq_correct_mag2);
 	return ERR_OK;
 }
