@@ -263,9 +263,8 @@ void system_run(void)
             printf("Pipeline_ProcessFrame failed: %d\n", (int) ret);
             break;
         } else {} /* chirp 还在积累 没到最后一个*/
-
-        break;
         ++i;
+
     }
     t1 = clock();
     sec = (double)(t1 - t0) / CLOCKS_PER_SEC;

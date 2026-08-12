@@ -1,76 +1,87 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <xxProperties>
-                        
+                            
+    
     
     
     
     
     
     <propertyGroup name="project.information">
-                                                
+                                                        
+        
         
         
         
         
         
         <version value="3.0"/>
-                                                
+                                                        
+    
     
     
     
     
     
     </propertyGroup>
-                        
+                            
+    
     
     
     
     
     
     <propertyGroup name="build.property">
-                                                
+                                                        
+        
         
         
         
         
         
         <buildTarget defaultTarget="Release"/>
-                                                
+                                                        
+    
     
     
     
     
     
     </propertyGroup>
-                        
+                            
+    
     
     
     
     
     
     <propertyGroup name="library.dependencies">
-                                                
+                                                        
+        
         
         
         
         
         
         <libraryDependencies/>
-                                                
+                                                        
+    
     
     
     
     
     
     </propertyGroup>
-                        
+                            
+    
     
     
     
     
     
     <propertyGroup name="build.exclusion.data">
-                                                
+                                                        
+        
         
         
         
@@ -606,71 +617,90 @@
                 <excludedEntry data="/.*/matinv/cqrsf/cqrsfUpdateB4_bbe32\.c"/>
             </exclusionSet>
         </buildExclusionDatas>
-                                            
+                                                    
+    
     
     
     
     
     </propertyGroup>
-                    
+                        
+    
     
     
     
     
     <propertyGroup name="build.auto.includes">
-                                
+                                        
+        
         
         
         <exportDirs autoConsumeDirs="false" includeDepDirs="false" mode="off"/>
+                                    
+    
+    
+    
+    </propertyGroup>
+                        
+    
+    
+    
+    
+    <propertyGroup name="build.custom.steps">
+                                
+        
+        
+        <pre-build enable="false">
+                                                
+            
+            
+            <content/>
+                                            
+        
+        
+        </pre-build>
+                                
+        
+        
+        <pre-link enable="false">
+                                                
+            
+            
+            <content/>
+                                            
+        
+        
+        </pre-link>
+                                
+        
+        
+        <post-build enable="false">
+                                                
+            
+            
+            <content/>
+                                            
+        
+        
+        </post-build>
+                                
+        
+        
+        <pre-clean enable="false">
+                                                
+            
+            
+            <content/>
+                                            
+        
+        
+        </pre-clean>
                             
     
     
     </propertyGroup>
                     
-    
-    
-    
-    <propertyGroup name="build.custom.steps">
-                        
-        
-        <pre-build enable="false">
-                                    
-            
-            <content/>
-                                
-        
-        </pre-build>
-                        
-        
-        <pre-link enable="false">
-                                    
-            
-            <content/>
-                                
-        
-        </pre-link>
-                        
-        
-        <post-build enable="false">
-                                    
-            
-            <content/>
-                                
-        
-        </post-build>
-                        
-        
-        <pre-clean enable="false">
-                                    
-            
-            <content/>
-                                
-        
-        </pre-clean>
-                    
-    
-    </propertyGroup>
-                
+
 
 
 

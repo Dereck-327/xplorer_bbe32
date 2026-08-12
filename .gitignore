@@ -13,3 +13,5 @@ app/data
 .cache
 app/.cproject
 app/demo
+app/.settings
+.venv
