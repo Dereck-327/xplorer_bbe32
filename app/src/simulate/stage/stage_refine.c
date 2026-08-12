@@ -86,11 +86,11 @@ ErrorType StageRefine(Bbe_CtxType *const aCtx)
 			                &aCtx->work.peakFrac[i]);
 		}
 
-		TRACE(TRACE_DEBUG, aCtx->work.peakLeftW,
+		TRACE(aCtx->work.peakLeftW,
 		         ARRAY_KIND_S16, PEAKS_NUM, "peaks_left_width:\n");
-		TRACE(TRACE_DEBUG, aCtx->work.peakRightW,
+		TRACE(aCtx->work.peakRightW,
 		         ARRAY_KIND_S16, PEAKS_NUM, "peaks_right_width:\n");
-		TRACE(TRACE_DEBUG, aCtx->work.peakFrac,
+		TRACE(aCtx->work.peakFrac,
 		         ARRAY_KIND_S16, PEAKS_NUM, "peaks_frac_buffer:\n");
 	}
 

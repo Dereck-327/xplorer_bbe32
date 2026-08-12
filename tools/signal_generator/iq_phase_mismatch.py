@@ -88,6 +88,7 @@ class IQSignal :
         """ 将 I_F=fft(I_ac)、Q_F=fft(Q_ac) 定点化 (S16 块浮点) 写文件。
             复数 -> 交织存 real/imag; 全部分量共用一个块指数 fft_bexp。
             真值 = mantissa * 2^(fft_bexp - 15)
+            S(16, 15)
         """
         I_F = np.fft.fft(self._I_ac)
         Q_F = np.fft.fft(self._Q_ac)

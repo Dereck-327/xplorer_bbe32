@@ -45,14 +45,11 @@ ErrorType DumpArray(const void *const aArr,
 
 
 #if TRACE_ENABLED
-	#define TRACE(aBit, aArr, aKind, aCount, aLabel)						\
-		do {																\
-			if (0U != (TRACE_MASK & (1U << (aBit)))) {					\
+	#define TRACE(aArr, aKind, aCount, aLabel)						\
 				(void) DumpArray((aArr), (aKind), (aCount), (aLabel));	\
-			}																\
-		} while (0)
+
 #else
-	#define TRACE(aBit, aArr, aKind, aCount, aLabel)	do { } while (0)
+	#define TRACE(aArr, aKind, aCount, aLabel)	do { } while (0)
 #endif
 
 #endif /* DEBUG_TRACE_H__ */

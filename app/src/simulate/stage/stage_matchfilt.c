@@ -53,7 +53,7 @@ ErrorType StageMatchFilt(Bbe_CtxType *const aCtx)
 		                MAG2_SIZE_PAD,
 		                aCtx->param.mfCoeff);
 
-		TRACE(STAGE_MATCHFILT, &aCtx->work.accEqMf[PADDING],
+		TRACE(&aCtx->work.accEqMf[PADDING],
 		         ARRAY_KIND_S16, MAG2_SIZE, "mag2_acc_eq_mf:\n");
 
 		/* 滤波结果回灌 accEq: 后面 RA_StagePeak 的遮蔽会就地破坏 accEqMf,

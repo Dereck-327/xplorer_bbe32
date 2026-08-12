@@ -33,9 +33,9 @@ ErrorType StageEmit(Bbe_CtxType *const aCtx)
 		                     aCtx->result.peaksIdx,
 		                     aCtx->result.peaksFrac);
 
-		TRACE(TRACE_DEBUG, aCtx->result.peaksIdx,
+		TRACE(aCtx->result.peaksIdx,
 		         ARRAY_KIND_S16, PEAKS_NUM, "peaks_idx:\n");
-		TRACE(TRACE_DEBUG, aCtx->result.peaksFrac,
+		TRACE(aCtx->result.peaksFrac,
 		         ARRAY_KIND_S16, PEAKS_NUM, "peaks_frac:\n");
 	}
 

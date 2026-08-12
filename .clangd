@@ -8,15 +8,15 @@ CompileFlags:
     - -D__XCC__=1
     - -D__XTENSA_EL__=1
     - -include
-    - D:/workspace/04.tensaWorkspace/bbe32/.clangd-tie-shim.h
-    - -ID:/workspace/04.tensaWorkspace/bbe32/bbe32ep_library/include
-    - -ID:/workspace/04.tensaWorkspace/bbe32/bbe32ep_library/include_private
+    - D:/WorkProgram/21.DSP_Simulate/xplorer_bbe32/.clangd-tie-shim.h
+    - -ID:/WorkProgram/21.DSP_Simulate/xplorer_bbe32/bbe32ep_library/include
+    - -ID:/WorkProgram/21.DSP_Simulate/xplorer_bbe32/bbe32ep_library/include_private
+    - -ID:/WorkProgram/21.DSP_Simulate/xplorer_bbe32/app/inc
+    - -ID:/WorkProgram/21.DSP_Simulate/xplorer_bbe32/app/inc/bbe
     - -IC:/usr/xtensa/XtDevTools/install/builds/RI-2020.5-win32/bbe32_saturn/xtensa-elf/arch/include
     - -IC:/usr/xtensa/XtDevTools/install/builds/RI-2020.5-win32/bbe32_saturn/xtensa-elf/include
     - -IC:/usr/xtensa/XtDevTools/install/tools/RI-2020.5-win32/XtensaTools/lib/xcc/include
     - -IC:/usr/xtensa/XtDevTools/install/tools/RI-2020.5-win32/XtensaTools/xtensa-elf/include
-    - -ID:/workspace/04.tensaWorkspace/bbe32/app/inc
-    - -ID:/workspace/04.tensaWorkspace/bbe32/app/inc/bbe
     - -Wno-unknown-attributes
     # A few BBE_DIV* intrinsics are in no header; xt-clang only warns too.
     - -Wno-implicit-function-declaration

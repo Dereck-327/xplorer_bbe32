@@ -17,3 +17,4 @@ app/.settings
 .venv
 app/IQ_mismatch_data
 __pycache__
+tools\signal_generator\out

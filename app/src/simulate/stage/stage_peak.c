@@ -36,11 +36,11 @@ ErrorType StagePeak(Bbe_CtxType *const aCtx)
 		                  aCtx->result.peaksFwhm,
 		                  aCtx->result.peaksSnr);
 
-		TRACE(TRACE_DEBUG, aCtx->work.peakIdx,
+		TRACE(aCtx->work.peakIdx,
 		         ARRAY_KIND_U16, PEAKS_NUM, "peaks_idx_buffer:\n");
-		TRACE(TRACE_DEBUG, aCtx->result.peaksFwhm,
+		TRACE(aCtx->result.peaksFwhm,
 		         ARRAY_KIND_U16, PEAKS_NUM, "peaks_fwhm:\n");
-		TRACE(TRACE_DEBUG, aCtx->result.peaksSnr,
+		TRACE(aCtx->result.peaksSnr,
 		         ARRAY_KIND_U16, PEAKS_NUM, "peaks_snr:\n");
 	}
 

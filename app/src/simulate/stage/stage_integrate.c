@@ -32,9 +32,9 @@ ErrorType StageIntegrate(Bbe_CtxType *const aCtx)
 		               &aCtx->work.accEqBexp,
 		               MAG2_SIZE);
 
-		TRACE(TRACE_DEBUG, &aCtx->work.acc[PADDING],
+		TRACE(&aCtx->work.acc[PADDING],
 		         ARRAY_KIND_S16, MAG2_SIZE, "mag2_acc:\n");
-		TRACE(TRACE_DEBUG, &aCtx->work.accEqBexp,
+		TRACE(&aCtx->work.accEqBexp,
 		         ARRAY_KIND_S16, 1U, "mag2_acc_eq_bexp:\n");
 
 		/* 均衡: acc S(16,14) * fftEq U(16,15) >> 15 -> accEq S(16,14) */
@@ -44,7 +44,7 @@ ErrorType StageIntegrate(Bbe_CtxType *const aCtx)
 		              EQ_SHIFT,
 		              MAG2_SIZE);
 
-		TRACE(TRACE_DEBUG, &aCtx->work.accEq[PADDING],
+		TRACE(&aCtx->work.accEq[PADDING],
 		         ARRAY_KIND_S16, MAG2_SIZE, "mag2_acc_eq:\n");
 	}
 

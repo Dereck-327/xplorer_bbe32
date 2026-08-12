@@ -1,11 +1,14 @@
 #include "system.h"
 #include "utils/bbe_type.h"
 #include "simulate/pipeline.h"
+#include "simulate/iq_missmatch/iq_missmatch.h"
+#include "utils/err.h"
 
+#include <stdint.h>
 #include <stdio.h>
 #include <time.h>
 
-#define DATA_DIR        "data"
+#define DATA_DIR        "IQ_mismatch_data"
 //==========================[ Data Structures ]=========================
 typedef struct sTxtSrcType
 {
@@ -19,17 +22,12 @@ typedef struct sTxtSrcType
 BBE_CTX_DEFINE(static, g_ctx);
 
 static ParamType_t g_param COMP_ALIGN(VEC_ALIGN);
-static uint16_t g_mag2[MAG2_SIZE] COMP_ALIGN(VEC_ALIGN);
+static Bbe_FrameType g_frame COMP_ALIGN(VEC_ALIGN);
 static TxtSrcType g_src;
 static char g_path[PATH_MAX_LEN];
 
 //==========================[ Static Function Prototypes ]=========================
 static ErrorType txt_next(void *const aSrcCtx, const char **const aKey, char **const aVal);
-
-static ErrorType frame_load(const char *const aPath,
-                               uint16_t *const aMag2,
-                               uint8_t *const aDataBexp,
-                               uint8_t *const aMagsqBexp);
 
 static uint16_t file_count(const char *const aDir);
 
@@ -73,88 +71,6 @@ static ErrorType txt_next(void *const aSrcCtx, const char **const aKey, char **c
 }
 
 /* 一个 ra_data_N.txt 就是一个 chirp: 谱 + 两个块指数 */
-static ErrorType frame_load(const char *const aPath,
-                               uint16_t *const aMag2,
-                               uint8_t *const aDataBexp,
-                               uint8_t *const aMagsqBexp)
-{
-	ErrorType ret = ERR_OK;
-	ErrorType srcRet;
-	const char *key = NULL;
-	char *val = NULL;
-	char *tok;
-	uint16_t n;
-	uint8_t seen = 0U;
-
-	g_src.fp = fopen(aPath, "r");
-
-	if (NULL == g_src.fp)
-	{
-		ret = ERR_NOT_FOUND;
-	}
-	else
-	{
-		for (;;)
-		{
-			srcRet = txt_next(&g_src, &key, &val);
-
-			if (ERR_NOT_FOUND == srcRet)
-			{
-				break;
-			}
-			else if (ERR_OK != srcRet)
-			{
-				ret = ERR_DATA_INTEG;
-				break;
-			}
-			else if (0 == strcmp(key, "ra_data"))
-			{
-				n = 0U;
-				tok = strtok(val, ",");
-
-				while ((NULL != tok) && (n < MAG2_SIZE))
-				{
-					aMag2[n] = (uint16_t) strtoul(tok, NULL, 10);
-					++n;
-					tok = strtok(NULL, ",");
-				}
-
-				if (MAG2_SIZE != n)
-				{
-					ret = ERR_DATA_INTEG;
-					break;
-				}
-
-				++seen;
-			}
-			else if (0 == strcmp(key, "ra_data_bexp"))
-			{
-				*aDataBexp = (uint8_t) strtoul(val, NULL, 10);
-				++seen;
-			}
-			else if (0 == strcmp(key, "ra_data_magsq_bexp"))
-			{
-				*aMagsqBexp = (uint8_t) strtoul(val, NULL, 10);
-				++seen;
-			}
-			else
-			{
-				continue;				/* 未知键忽略 */
-			}
-		}
-
-		(void) fclose(g_src.fp);
-		g_src.fp = NULL;
-
-		if ((ERR_OK == ret) && (FRAME_KEY_NUM != seen))
-		{
-			ret = ERR_DATA_INTEG;		/* 三样缺一不可 */
-		}
-	}
-
-	return ret;
-}
-
 static uint16_t file_count(const char *const aDir)
 {
 	uint16_t n = 0U;
@@ -229,6 +145,10 @@ ErrorType system_init(void)
 }
 
 
+/* Gram-Schmidt 盲校准系数, 由离线工具 (iq_phase_mismatch.py) 估出 */
+#define IQ_RHO         (0.2325524544260392F)
+#define IQ_GAIN_CORR   (1.0897237313241515F)
+
 void system_run(void)
 {
     ErrorType ret = ERR_OK;
@@ -236,8 +156,6 @@ void system_run(void)
     clock_t t0, t1;
     double sec;
     uint16_t i = 0U;
-    uint8_t dataBexp = 0U;
-    uint8_t magsqBexp = 0U;
     uint16_t frames = 0U;
     uint16_t total = file_count(DATA_DIR);
     printf("Total chirps to process: %u\n", (unsigned) total);
@@ -245,12 +163,14 @@ void system_run(void)
     while (i < total)
     {
         (void) snprintf(g_path, sizeof(g_path), "%s/ra_data_%u.txt", DATA_DIR, (unsigned) i);
-        ret = frame_load(g_path, g_mag2, &dataBexp, &magsqBexp);
+        ret = iqMissmatch_frame_load(g_path, IQ_RHO, IQ_GAIN_CORR, &g_frame);
         if (ret != ERR_OK) {
-            printf("frame_load failed: %d\n", (int) ret);
+            printf("iqMissmatch_frame_load failed: %d\n", (int) ret);
             break;
         }
-        ret = Pipeline_SubmitFrame(&g_ctx, g_mag2, dataBexp, magsqBexp);
+
+        ret = Pipeline_SubmitFrame(&g_ctx, g_frame.mag2,
+                                   g_frame.dataBexp, g_frame.magsqBexp);
         if (ret != ERR_OK) {
             printf("Pipeline_SubmitFrame failed: %d\n", (int) ret);
             break;
