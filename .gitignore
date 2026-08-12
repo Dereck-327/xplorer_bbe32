@@ -16,3 +16,4 @@ app/demo
 app/.settings
 .venv
 app/IQ_mismatch_data
+__pycache__
