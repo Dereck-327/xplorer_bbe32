@@ -27,8 +27,8 @@
  *                        (与 stage_prepare 的 mag2Bexp = 32 - 2*dataBexp - 2*magsqBexp 对应)
  */
 void iq_correct_mag2(
-    const int16_t *restrict i_f,
-    const int16_t *restrict q_f,
+    const complex_fract16 *restrict i_f,
+    const complex_fract16 *restrict q_f,
     const int16_t rho_q15,
     const int16_t gain_q14,
     uint16_t *restrict mag2,

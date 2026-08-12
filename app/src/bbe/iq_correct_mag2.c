@@ -22,44 +22,48 @@
 
 //==========================[ Headers ]=========================
 #include "bbe/iq_correct_mag2.h"
+#include "NatureDSP_types.h"
 
 //==========================[ Static Helpers ]=========================
 /* 单 bin 校正后功率 |sig|^2 (纯定点, 中间用 32/64 位防溢出) */
-static int64_t bin_power(const int16_t *restrict i_f,
-                         const int16_t *restrict q_f,
+static int64_t bin_power(const complex_fract16 *restrict i_f,
+                         const complex_fract16 *restrict q_f,
                          const uint16_t k,
                          const int16_t rho_q15,
                          const int16_t gain_q14)
 {
-    int32_t iRe = (int32_t) i_f[2U * k];
-    int32_t iIm = (int32_t) i_f[2U * k + 1U];
-    int32_t qRe = (int32_t) q_f[2U * k];
-    int32_t qIm = (int32_t) q_f[2U * k + 1U];
+    // int32_t iRe = (int32_t) i_f[2U * k];
+    // int32_t iIm = (int32_t) i_f[2U * k + 1U];
+    // int32_t qRe = (int32_t) q_f[2U * k];
+    // int32_t qIm = (int32_t) q_f[2U * k + 1U];
 
-    /* Q - rho*I  在 Q15 域: (Q<<15 - rho*I) */
-    int32_t dRe = (qRe << IQ_RHO_Q) - ((int32_t) rho_q15 * iRe);
-    int32_t dIm = (qIm << IQ_RHO_Q) - ((int32_t) rho_q15 * iIm);
+    // /* Q - rho*I  在 Q15 域: (Q<<15 - rho*I) */
+    // int32_t dRe = (qRe << IQ_RHO_Q) - ((int32_t) rho_q15 * iRe);
+    // int32_t dIm = (qIm << IQ_RHO_Q) - ((int32_t) rho_q15 * iIm);
 
-    /* *gain(Q14) 再退回整数域: >> (15+14) */
-    int32_t qcRe = (int32_t) (((int64_t) gain_q14 * dRe) >> (IQ_RHO_Q + IQ_GAIN_Q));
-    int32_t qcIm = (int32_t) (((int64_t) gain_q14 * dIm) >> (IQ_RHO_Q + IQ_GAIN_Q));
+    // /* *gain(Q14) 再退回整数域: >> (15+14) */
+    // int32_t qcRe = (int32_t) (((int64_t) gain_q14 * dRe) >> (IQ_RHO_Q + IQ_GAIN_Q));
+    // int32_t qcIm = (int32_t) (((int64_t) gain_q14 * dIm) >> (IQ_RHO_Q + IQ_GAIN_Q));
 
-    int32_t sRe = iRe - qcIm;
-    int32_t sIm = iIm + qcRe;
+    // int32_t sRe = iRe - qcIm;
+    // int32_t sIm = iIm + qcRe;
 
-    return ((int64_t) sRe * sRe) + ((int64_t) sIm * sIm);
+    // return ((int64_t) sRe * sRe) + ((int64_t) sIm * sIm);
+    return 0;
 }
 
 //==========================[ Function Implementations ]=========================
 void iq_correct_mag2(
-    const int16_t *restrict i_f,
-    const int16_t *restrict q_f,
+    const complex_fract16 *restrict i_f,
+    const complex_fract16 *restrict q_f,
     const int16_t rho_q15,
     const int16_t gain_q14,
     uint16_t *restrict mag2,
     uint8_t *restrict magsq_bexp,
     const uint16_t samples)
 {
+    BBE_SIMD_WIDTH;  // BBE_SIMD_WIDTH = 16
+
     int64_t peakP = 0;
     int      bexp = 0;      /* magsq 块指数, 有效右移 = 15 + 2*bexp */
     int      shift;
