@@ -154,13 +154,12 @@ void system_run(void)
 {
     ErrorType ret = ERR_OK;
     Bbe_ResultType out;
-    clock_t t0, t1;
     double sec;
     uint16_t i = 0U;
     uint16_t frames = 0U;
     uint16_t total = file_count(DATA_DIR);
     printf("Total chirps to process: %u\n", (unsigned) total);
-    t0 = clock();
+
 	PerfStat_Init();
     while (i < total)
     {
@@ -198,14 +197,7 @@ void system_run(void)
 		PERF_END(frame_total);
 
     }
-    t1 = clock();
-    sec = (double)(t1 - t0) / CLOCKS_PER_SEC;
-    printf("========================================\n");
-    printf("Processed %u chirps in %.3f seconds\n", (unsigned) frames, sec);
-	if (0U != i)
-	{
-		printf("Average time per chirp: %.6f seconds\n", sec / (double) i);
-	}
+
     printf("========================================\n");
 	PerfStat_Report();
 }

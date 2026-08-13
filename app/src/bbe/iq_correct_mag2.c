@@ -33,11 +33,12 @@ void iq_correct_mag2(
     uint8_t *restrict magsq_bexp,
     const uint16_t samples)
 {
+    PERF_BEGIN(iq_mag2_1);
     #pragma aligned(i_f, 32)
     #pragma aligned(q_f, 32)
     #pragma aligned(mag2, 32)
 
-    /* complex_fract16* 转为 xb_vecNx16* (标准 BBE 模式, 见 vcabs_bbe32.c:89) */
+    /* complex_fract16* 转为 xb_vecNx16*  */
     const xb_vecNx16 *restrict p_i = (const xb_vecNx16 *) i_f;
     const xb_vecNx16 *restrict p_q = (const xb_vecNx16 *) q_f;
     xb_vecNx16 *restrict p_out = (xb_vecNx16 *) mag2;
@@ -63,10 +64,10 @@ void iq_correct_mag2(
     NASSERT_ALIGN(q_f, (2 * BBE_SIMD_WIDTH));
     NASSERT_ALIGN(mag2, (2 * BBE_SIMD_WIDTH));
     NASSERT(samples % BBE_SIMD_WIDTH == 0);
-
-
+    PERF_END(iq_mag2_1);
+    PERF_BEGIN(iq_mag2_2);
     double sec;
-    /* ---- 第一趟: 标量找峰 (向量峰值规约复杂, 暂用标量) ---- */
+    /* ----  标量找峰 (向量峰值规约复杂, 暂用标量) ---- */
     {
         int64_t peakP = 0;
         uint16_t k;
@@ -102,8 +103,9 @@ void iq_correct_mag2(
         }
         *magsq_bexp = (uint8_t) bexp;
     }
-
-    /* ---- 第二趟: BBE 向量化校正 + 量化 ---- */
+    PERF_END(iq_mag2_2);
+    PERF_BEGIN(iq_mag2_3);
+    /* ---- BBE 向量化校正 + 量化 ---- */
     shift = 15 + (2 * bexp);
     p_i = (const xb_vecNx16 *) i_f;
     p_q = (const xb_vecNx16 *) q_f;
@@ -160,4 +162,5 @@ void iq_correct_mag2(
         /* 存为 uint16 (BBE_SVNX16 写 int16, 位模式与 uint16 等价) */
         BBE_SVNX16_IP(mag16, p_out, 2 * BBE_SIMD_WIDTH);
     }
+    PERF_END(iq_mag2_3);
 }

@@ -33,6 +33,7 @@
 
 #include <stdint.h>
 #include <stdbool.h>
+#include "simulate/cfg.h"
 
 //==========================[ 配置 ]=========================
 /* 编译时开关: 0=禁用 (零开销), 1=启用 */
@@ -45,7 +46,7 @@
 #define PERF_STAT_MAX_POINTS  32
 #endif
 
-/* 时钟源: 0=clock(), 1=Xtensa cycle counter (如果可用) */
+/* 时钟源: 0=clock(), 1=Xtensa cycle counter  */
 #ifndef PERF_STAT_USE_CYCLES
 #define PERF_STAT_USE_CYCLES  0
 #endif
@@ -54,7 +55,7 @@
 typedef uint64_t perf_time_t;
 
 typedef struct {
-    const char *name;           /* 统计点名称 (通常是函数名) */
+    const char *name;           /* 统计点名称  */
     perf_time_t total;          /* 累计时间 */
     perf_time_t min;            /* 最小时间 */
     perf_time_t max;            /* 最大时间 */
@@ -66,13 +67,13 @@ typedef struct {
 //==========================[ API ]=========================
 #if PERF_STAT_ENABLED
 
-/* 初始化模块 (在 main 开始时调用一次) */
+/* 初始化 */
 void PerfStat_Init(void);
 
-/* 开始计时 (通常不直接调用, 用 PERF_BEGIN 宏) */
+/* 开始计时 (用 PERF_BEGIN 宏) */
 void PerfStat_Begin(const char *name);
 
-/* 结束计时 (通常不直接调用, 用 PERF_END 宏) */
+/* 结束计时 (用 PERF_END 宏) */
 void PerfStat_End(const char *name);
 
 /* 打印所有统计信息 */
@@ -81,7 +82,7 @@ void PerfStat_Report(void);
 /* 重置所有统计 */
 void PerfStat_Reset(void);
 
-/* 获取单个统计点 (返回 NULL 如果不存在) */
+/* 获取单个统计点 (不存在则返回 NULL ) */
 const PerfStatPoint* PerfStat_Get(const char *name);
 
 //==========================[ 宏接口 ]=========================
@@ -109,7 +110,7 @@ const PerfStatPoint* PerfStat_Get(const char *name);
 
 #else  /* PERF_STAT_ENABLED == 0 */
 
-/* 禁用时: 所有宏编译为空 (零开销) */
+/* 禁用时: 所有宏编译为空 */
 #define PerfStat_Init()       ((void)0)
 #define PerfStat_Begin(name)  ((void)0)
 #define PerfStat_End(name)    ((void)0)

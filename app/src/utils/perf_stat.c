@@ -10,13 +10,14 @@
 
 #if PERF_STAT_ENABLED
 
-//==========================[ 内部数据 ]=========================
+//==========================[ static fun ]=========================
 static PerfStatPoint g_points[PERF_STAT_MAX_POINTS];
 static uint32_t g_point_count = 0;
 
-//==========================[ 时钟抽象 ]=========================
+//==========================[ clock ]=========================
 #if PERF_STAT_USE_CYCLES
-    /* Xtensa cycle counter (如果可用) */
+#define XCHAL_CLOCK_FREQ_MHZ (800U)  // 800MHz
+    /* Xtensa cycle counter */
     #include <xtensa/hal.h>
     static inline perf_time_t perf_get_time(void) {
         return xthal_get_ccount();
@@ -35,13 +36,12 @@ static uint32_t g_point_count = 0;
     }
 #endif
 
-//==========================[ 内部辅助 ]=========================
+//==========================[ internal ]=========================
 /* 查找或创建统计点 */
 static PerfStatPoint* perf_find_or_create(const char *name)
 {
     uint32_t i;
 
-    /* 先查找已存在的 */
     for (i = 0; i < g_point_count; ++i)
     {
         if (0 == strcmp(g_points[i].name, name))
@@ -50,7 +50,6 @@ static PerfStatPoint* perf_find_or_create(const char *name)
         }
     }
 
-    /* 创建新的 */
     if (g_point_count >= PERF_STAT_MAX_POINTS)
     {
         return NULL;  /* 溢出 */
@@ -63,7 +62,7 @@ static PerfStatPoint* perf_find_or_create(const char *name)
     return pt;
 }
 
-//==========================[ API 实现 ]=========================
+//==========================[ API ]=========================
 void PerfStat_Init(void)
 {
     memset(g_points, 0, sizeof(g_points));

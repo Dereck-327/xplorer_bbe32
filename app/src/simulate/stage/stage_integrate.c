@@ -37,7 +37,7 @@ ErrorType StageIntegrate(Bbe_CtxType *const aCtx)
 		TRACE(&aCtx->work.accEqBexp,
 		         ARRAY_KIND_S16, 1U, "mag2_acc_eq_bexp:\n");
 
-		/* 均衡: acc S(16,14) * fftEq U(16,15) >> 15 -> accEq S(16,14) */
+		/* 均衡: (acc S(16,14) * fftEq U(16,15)) >> 15 -> accEq S(16,14) */
 		DSP_MulS16U16(&aCtx->work.acc[PADDING],
 		              aCtx->param.fftEq,
 		              &aCtx->work.accEq[PADDING],

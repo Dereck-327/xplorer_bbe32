@@ -12,8 +12,7 @@
 #include "utils/perf_stat.h"
 
 /* 交织存储 [re, im, re, im, ...], 布局同 complex_fract16, 每路 2*MAG2_SIZE 个 int16 */
-// static int16_t g_i_f[2U * MAG2_SIZE] COMP_ALIGN(VEC_ALIGN);
-// static int16_t g_q_f[2U * MAG2_SIZE] COMP_ALIGN(VEC_ALIGN);
+
 static complex_fract16 g_i_f[MAG2_SIZE] COMP_ALIGN(VEC_ALIGN);
 static complex_fract16 g_q_f[MAG2_SIZE] COMP_ALIGN(VEC_ALIGN);
 
@@ -29,7 +28,7 @@ static uint32_t parse_i16_csv(char *aVal, complex_fract16 *const aDst, const uin
 	{
 		aDst[n].s.re = (int16_t) strtol(tok, NULL, 10);
         tok = strtok(NULL, ",");
-        if (NULL == tok) { break; }  // 缺少匹配的叙述
+        if (NULL == tok) { break; }  // 缺少匹配的虚数
 		aDst[n].s.im = (int16_t) strtol(tok, NULL, 10);
 		tok = strtok(NULL, ",");
 		++n;
@@ -112,7 +111,7 @@ ErrorType iqMissmatch_frame_load(const char *const aPath,
 		return ERR_DATA_INTEG;		/* i_f / q_f / fft_bexp 三样缺一不可 */
 	}
 
-	/* 系数转定点: rho Q15, gainCorr Q14 (见 iq_correct_mag2.h) */
+	/* 系数转定点: rho Q15, gainCorr Q14  */
 	rhoQ15  = (int16_t) lroundf(aRho * (float) (1 << IQ_RHO_Q));
 	gainQ14 = (int16_t) lroundf(aGainCorr * (float) (1 << IQ_GAIN_Q));
 

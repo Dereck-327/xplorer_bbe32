@@ -90,8 +90,8 @@ class IQSignal :
             真值 = mantissa * 2^(fft_bexp - 15)
             S(16, 15)
         """
-        I_F = np.fft.fft(self._I_ac)
-        Q_F = np.fft.fft(self._Q_ac)
+        I_F = np.fft.fftshift(np.fft.fft(self._I_ac))
+        Q_F = np.fft.fftshift(np.fft.fft(self._Q_ac))
 
         # 交织成 [re, im, re, im, ...]
         i_iq = np.empty(2 * self.N); i_iq[0::2] = I_F.real; i_iq[1::2] = I_F.imag

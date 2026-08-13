@@ -18,8 +18,15 @@
 
 /*==========================[ log ]=========================*/
 
-#define TRACE_INFO  (0x01U)
-#define TRACE_DEBUG (0x00U)
+#define TRACE_DEBUG (0)
+// 耗时统计
+#ifndef PERF_STAT_ENABLED
+#define PERF_STAT_ENABLED   1
+#endif
+/* 时钟源: 0=clock(), 1=Xtensa cycle counter  */
+#ifndef PERF_STAT_USE_CYCLES
+#define PERF_STAT_USE_CYCLES  0
+#endif
 
 /*==========================[ input data ]=========================*/
 
