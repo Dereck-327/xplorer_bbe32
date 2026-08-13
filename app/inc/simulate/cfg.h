@@ -19,13 +19,14 @@
 /*==========================[ log ]=========================*/
 
 #define TRACE_DEBUG (0)
+#define IS_CALCU_IQ_BEXP (0)   // 是否需要计算iq相位失配块指数计算
 // 耗时统计
 #ifndef PERF_STAT_ENABLED
 #define PERF_STAT_ENABLED   1
 #endif
 /* 时钟源: 0=clock(), 1=Xtensa cycle counter  */
 #ifndef PERF_STAT_USE_CYCLES
-#define PERF_STAT_USE_CYCLES  0
+#define PERF_STAT_USE_CYCLES  1
 #endif
 
 /*==========================[ input data ]=========================*/

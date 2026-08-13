@@ -78,28 +78,30 @@ void iq_correct_mag2(
     xb_vecNx16 sRe, sIm, s0, s1;
     xb_vecNx40 mul40, mag40;
     xb_vecNx16 mag16;
-    xb_int16   vec_max;
     uint16_t   i_blk;
-    int        bexp, shift, bits_16;
+    int        bexp, shift;
 
     const vsaN rho_sa     = BBE_MOVVA16(rho_q15);
     const vsaN gain_sa    = BBE_MOVVA16(gain_q14);
     const vsaN shift_rho  = BBE_MOVVA16((int16_t) IQ_RHO_Q);
     const vsaN shift_gain = BBE_MOVVA16((int16_t) IQ_GAIN_Q);
-    const vsaN pre_shift  = BBE_MOVVA16((int16_t) IQ_PRESCAN_SHIFT);
+
 
     NASSERT_ALIGN(i_f,  (2 * BBE_SIMD_WIDTH));
     NASSERT_ALIGN(q_f,  (2 * BBE_SIMD_WIDTH));
     NASSERT_ALIGN(mag2, (2 * BBE_SIMD_WIDTH));
     NASSERT(samples % BBE_SIMD_WIDTH == 0);
 
+#if IS_CALCU_IQ_BEXP
     /* ==== 第一趟: 全向量化找峰 ==================================
      * mag40 最大约 2*32767^2 ≈ 2^31 (31 bit);
      * 右移 PRESCAN_SHIFT=17 后落进 [0, 2^14] ⊂ int16 范围;
      * BBE_RMAXNX16 每块规约, 跨块维护标量最大值。              */
     PERF_BEGIN(iq_scan_peak);
 
-    vec_max = 0;
+    const vsaN pre_shift  = BBE_MOVVA16((int16_t) IQ_PRESCAN_SHIFT);
+    xb_int16   vec_max = 0;
+    int bits_16;
     p_i = (const xb_vecNx16 *) i_f;
     p_q = (const xb_vecNx16 *) q_f;
 
@@ -132,10 +134,11 @@ void iq_correct_mag2(
     }
     bexp = (bits_16 - 14) / 2;     /* integer floor division peak压缩过了 14 = 31-17 */
     if (bexp < 0) { bexp = 0; }
-    *magsq_bexp = (uint8_t) bexp;
-
     PERF_END(iq_scan_peak);
-
+#else
+    bexp = 0;
+#endif
+    *magsq_bexp = (uint8_t) bexp;
     /* ==== 第二趟: 全向量化量化写出 ============================== */
     PERF_BEGIN(iq_quantize);
 

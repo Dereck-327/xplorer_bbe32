@@ -16,7 +16,7 @@ static uint32_t g_point_count = 0;
 
 //==========================[ clock ]=========================
 #if PERF_STAT_USE_CYCLES
-#define XCHAL_CLOCK_FREQ_MHZ (800U)  // 800MHz
+#define CLOCK_FREQ_MHZ (800U)  // 800MHz
     /* Xtensa cycle counter */
     #include <xtensa/hal.h>
     static inline perf_time_t perf_get_time(void) {
@@ -24,7 +24,7 @@ static uint32_t g_point_count = 0;
     }
     static inline uint64_t perf_time_to_us(perf_time_t cycles) {
         /* 假设 CPU 频率, 需根据实际调整 */
-        return cycles / (XCHAL_CLOCK_FREQ_MHZ);
+        return cycles ;
     }
 #else
     /* 标准 clock() */
@@ -122,8 +122,13 @@ void PerfStat_Report(void)
     uint32_t i;
 
     printf("\n========== Performance Statistics ==========\n");
+#if PERF_STAT_USE_CYCLES
+    printf("%-24s %8s %10s %10s %10s\n",
+           "Name", "Count", "Avg(cyc)", "Min(cyc)", "Max(cyc)");
+#else
     printf("%-24s %8s %10s %10s %10s\n",
            "Name", "Count", "Avg(us)", "Min(us)", "Max(us)");
+#endif
     printf("------------------------------------------------------------\n");
 
     for (i = 0; i < g_point_count; ++i)

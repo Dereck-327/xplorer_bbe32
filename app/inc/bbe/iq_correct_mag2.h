@@ -12,6 +12,7 @@
 //==========================[ Headers ]=========================
 #include "NatureDSP_types.h"
 #include "common.h"
+#include "simulate/cfg.h"
 
 //==========================[ 定点标度 ]=========================
 #define IQ_RHO_Q        (15)    /* rho    < 1  -> Q15 */

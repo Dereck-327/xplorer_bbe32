@@ -31,7 +31,7 @@
                     </FlagValueMapEntry>
                     <FlagValueMapEntry>
                         <key>Optimization</key>
-                        <value level="2" flag="-O" use="true"/>
+                        <value level="3" flag="-O" use="true"/>
                     </FlagValueMapEntry>
                 </FlagValueMapOptions>
             </CompilerOptions>
